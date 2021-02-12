@@ -14,8 +14,8 @@ struct GameSession: Codable & Equatable {
         return lhs.score > rhs.score
     }
     
-    // This will keep track of the game, and perform functions depending on its status?
-    var gameHasStarted: Bool
+    // User gets 3 lives, initialized in the GameViewController?
+    var livesRemaining: Int
     
     // NSUserDefaults should contain the name, if none is set,
     // we can prompt the user to go to settings, or provide dialog box?
@@ -28,7 +28,9 @@ struct GameSession: Codable & Equatable {
 // Extension
 extension GameSession {
      init(_ dictionary: [String: Any]) {
+        
         self.userName = dictionary["userName"] as? String ?? "No User Name"
         self.score = dictionary["score"] as? Int ?? -1
+        self.livesRemaining = dictionary["livesRemaining"] as? Int ?? -1
     }
 }

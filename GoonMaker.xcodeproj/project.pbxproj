@@ -12,7 +12,7 @@
 		537A5A905B4D6FACCA9FE1FB /* Pods_GoonMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D132695C18BD2FF2BE3C7C53 /* Pods_GoonMaker.framework */; };
 		85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE297D25D717FA009661E6 /* AppDelegate.swift */; };
 		85AE298025D717FA009661E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE297F25D717FA009661E6 /* SceneDelegate.swift */; };
-		85AE298225D717FA009661E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE298125D717FA009661E6 /* ViewController.swift */; };
+		85AE298225D717FA009661E6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE298125D717FA009661E6 /* GameViewController.swift */; };
 		85AE298525D717FA009661E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AE298325D717FA009661E6 /* Main.storyboard */; };
 		85AE298725D717FD009661E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AE298625D717FD009661E6 /* Assets.xcassets */; };
 		85AE298A25D717FD009661E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AE298825D717FD009661E6 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,10 @@
 		880F132425D728CC00532BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880F132325D728CC00532BB5 /* GoogleService-Info.plist */; };
 		8888EA7A25D72E7D000CE885 /* GameSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888EA7925D72E7D000CE885 /* GameSessionModel.swift */; };
 		8888EA8825D731AD000CE885 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888EA8725D731AD000CE885 /* UserDefaults.swift */; };
+		8888EA9025D733A0000CE885 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8888EA8F25D733A0000CE885 /* Settings.storyboard */; };
+		8888EA9525D733AC000CE885 /* LeaderboardTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8888EA9425D733AC000CE885 /* LeaderboardTableView.storyboard */; };
+		8888EA9D25D73554000CE885 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888EA9C25D73554000CE885 /* SettingsViewController.swift */; };
+		8888EAA225D73561000CE885 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888EAA125D73561000CE885 /* LeaderboardViewController.swift */; };
 		88C3916D25D72268007D71C3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3916C25D72268007D71C3 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +52,7 @@
 		85AE297A25D717FA009661E6 /* GoonMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoonMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AE297D25D717FA009661E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AE297F25D717FA009661E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85AE298125D717FA009661E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85AE298125D717FA009661E6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		85AE298425D717FA009661E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85AE298625D717FD009661E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AE298925D717FD009661E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +66,10 @@
 		880F132325D728CC00532BB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8888EA7925D72E7D000CE885 /* GameSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionModel.swift; sourceTree = "<group>"; };
 		8888EA8725D731AD000CE885 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		8888EA8F25D733A0000CE885 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		8888EA9425D733AC000CE885 /* LeaderboardTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeaderboardTableView.storyboard; sourceTree = "<group>"; };
+		8888EA9C25D73554000CE885 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8888EAA125D73561000CE885 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		88C3916C25D72268007D71C3 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A1B452A0FC756CAABA5F7212 /* Pods-GoonMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker.release.xcconfig"; path = "Target Support Files/Pods-GoonMaker/Pods-GoonMaker.release.xcconfig"; sourceTree = "<group>"; };
 		B5D0F07AE829E837D5272E38 /* Pods_GoonMaker_GoonMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoonMaker_GoonMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				8888EA7025D72C6A000CE885 /* SupportingFiles */,
-				8888EA7725D72E5D000CE885 /* ViewControllers */,
 				8888EA8125D72FFE000CE885 /* Models */,
+				8888EA7725D72E5D000CE885 /* ViewControllers */,
 				8888EA7825D72E6C000CE885 /* Storyboards */,
 				85AE298B25D717FD009661E6 /* Info.plist */,
 			);
@@ -190,7 +198,9 @@
 		8888EA7725D72E5D000CE885 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				85AE298125D717FA009661E6 /* ViewController.swift */,
+				85AE298125D717FA009661E6 /* GameViewController.swift */,
+				8888EA9C25D73554000CE885 /* SettingsViewController.swift */,
+				8888EAA125D73561000CE885 /* LeaderboardViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				85AE298325D717FA009661E6 /* Main.storyboard */,
+				8888EA8F25D733A0000CE885 /* Settings.storyboard */,
+				8888EA9425D733AC000CE885 /* LeaderboardTableView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -325,6 +337,8 @@
 				85AE298A25D717FD009661E6 /* LaunchScreen.storyboard in Resources */,
 				85AE298725D717FD009661E6 /* Assets.xcassets in Resources */,
 				85AE298525D717FA009661E6 /* Main.storyboard in Resources */,
+				8888EA9525D733AC000CE885 /* LeaderboardTableView.storyboard in Resources */,
+				8888EA9025D733A0000CE885 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,11 +483,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AE298225D717FA009661E6 /* ViewController.swift in Sources */,
+				85AE298225D717FA009661E6 /* GameViewController.swift in Sources */,
 				88C3916D25D72268007D71C3 /* Secrets.swift in Sources */,
+				8888EA9D25D73554000CE885 /* SettingsViewController.swift in Sources */,
 				8888EA8825D731AD000CE885 /* UserDefaults.swift in Sources */,
 				85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */,
 				8888EA7A25D72E7D000CE885 /* GameSessionModel.swift in Sources */,
+				8888EAA225D73561000CE885 /* LeaderboardViewController.swift in Sources */,
 				85AE298025D717FA009661E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

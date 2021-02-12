@@ -6,6 +6,10 @@ target 'GoonMaker' do
   use_frameworks!
 
   # Pods for GoonMaker
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Storage'
 
   target 'GoonMakerTests' do
     inherit! :search_paths

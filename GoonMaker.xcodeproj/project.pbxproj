@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D0D943774E3DC5576907AAE /* Pods_GoonMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8C2B03E1FDBED90DC36A31 /* Pods_GoonMakerTests.framework */; };
+		3C89968789FB75A97468FE92 /* Pods_GoonMaker_GoonMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D0F07AE829E837D5272E38 /* Pods_GoonMaker_GoonMakerUITests.framework */; };
+		537A5A905B4D6FACCA9FE1FB /* Pods_GoonMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D132695C18BD2FF2BE3C7C53 /* Pods_GoonMaker.framework */; };
+		85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE297D25D717FA009661E6 /* AppDelegate.swift */; };
+		85AE298025D717FA009661E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE297F25D717FA009661E6 /* SceneDelegate.swift */; };
+		85AE298225D717FA009661E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE298125D717FA009661E6 /* ViewController.swift */; };
+		85AE298525D717FA009661E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AE298325D717FA009661E6 /* Main.storyboard */; };
+		85AE298725D717FD009661E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AE298625D717FD009661E6 /* Assets.xcassets */; };
+		85AE298A25D717FD009661E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AE298825D717FD009661E6 /* LaunchScreen.storyboard */; };
+		85AE299525D717FD009661E6 /* GoonMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE299425D717FD009661E6 /* GoonMakerTests.swift */; };
+		85AE29A025D717FD009661E6 /* GoonMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE299F25D717FD009661E6 /* GoonMakerUITests.swift */; };
+		85AE29B625D7189F009661E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85AE29B525D7189F009661E6 /* GoogleService-Info.plist */; };
+		85AE29BB25D71C0D009661E6 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE29BA25D71C0D009661E6 /* Secrets.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85AE299125D717FD009661E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85AE297225D717FA009661E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85AE297925D717FA009661E6;
+			remoteInfo = GoonMaker;
+		};
+		85AE299C25D717FD009661E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85AE297225D717FA009661E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85AE297925D717FA009661E6;
+			remoteInfo = GoonMaker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		085766E2B96BB11450204034 /* Pods-GoonMaker-GoonMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker-GoonMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-GoonMaker-GoonMakerUITests/Pods-GoonMaker-GoonMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4DACE9C2F1000793269A2A9A /* Pods-GoonMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMakerTests.release.xcconfig"; path = "Target Support Files/Pods-GoonMakerTests/Pods-GoonMakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		61C7FDCD5E53517D7D829572 /* Pods-GoonMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker.debug.xcconfig"; path = "Target Support Files/Pods-GoonMaker/Pods-GoonMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		85AE297A25D717FA009661E6 /* GoonMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoonMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85AE297D25D717FA009661E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85AE297F25D717FA009661E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		85AE298125D717FA009661E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85AE298425D717FA009661E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85AE298625D717FD009661E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85AE298925D717FD009661E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85AE298B25D717FD009661E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AE299025D717FD009661E6 /* GoonMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoonMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85AE299425D717FD009661E6 /* GoonMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoonMakerTests.swift; sourceTree = "<group>"; };
+		85AE299625D717FD009661E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AE299B25D717FD009661E6 /* GoonMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoonMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85AE299F25D717FD009661E6 /* GoonMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoonMakerUITests.swift; sourceTree = "<group>"; };
+		85AE29A125D717FD009661E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AE29B525D7189F009661E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		85AE29BA25D71C0D009661E6 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A1B452A0FC756CAABA5F7212 /* Pods-GoonMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker.release.xcconfig"; path = "Target Support Files/Pods-GoonMaker/Pods-GoonMaker.release.xcconfig"; sourceTree = "<group>"; };
+		B5D0F07AE829E837D5272E38 /* Pods_GoonMaker_GoonMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoonMaker_GoonMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF8C2B03E1FDBED90DC36A31 /* Pods_GoonMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoonMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D132695C18BD2FF2BE3C7C53 /* Pods_GoonMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoonMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5FA646CF80E53A2AE34FD4B /* Pods-GoonMaker-GoonMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker-GoonMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoonMaker-GoonMakerUITests/Pods-GoonMaker-GoonMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E6DEF2B1B15E429A4A3C49 /* Pods-GoonMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-GoonMakerTests/Pods-GoonMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85AE297725D717FA009661E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				537A5A905B4D6FACCA9FE1FB /* Pods_GoonMaker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AE298D25D717FD009661E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0D943774E3DC5576907AAE /* Pods_GoonMakerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AE299825D717FD009661E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C89968789FB75A97468FE92 /* Pods_GoonMaker_GoonMakerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F3184A39651F8E0BDF4FBBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61C7FDCD5E53517D7D829572 /* Pods-GoonMaker.debug.xcconfig */,
+				A1B452A0FC756CAABA5F7212 /* Pods-GoonMaker.release.xcconfig */,
+				D5FA646CF80E53A2AE34FD4B /* Pods-GoonMaker-GoonMakerUITests.debug.xcconfig */,
+				085766E2B96BB11450204034 /* Pods-GoonMaker-GoonMakerUITests.release.xcconfig */,
+				E9E6DEF2B1B15E429A4A3C49 /* Pods-GoonMakerTests.debug.xcconfig */,
+				4DACE9C2F1000793269A2A9A /* Pods-GoonMakerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		297690A4985043D13EF5270F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D132695C18BD2FF2BE3C7C53 /* Pods_GoonMaker.framework */,
+				B5D0F07AE829E837D5272E38 /* Pods_GoonMaker_GoonMakerUITests.framework */,
+				BF8C2B03E1FDBED90DC36A31 /* Pods_GoonMakerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85AE297125D717FA009661E6 = {
+			isa = PBXGroup;
+			children = (
+				85AE297C25D717FA009661E6 /* GoonMaker */,
+				85AE299325D717FD009661E6 /* GoonMakerTests */,
+				85AE299E25D717FD009661E6 /* GoonMakerUITests */,
+				85AE297B25D717FA009661E6 /* Products */,
+				1F3184A39651F8E0BDF4FBBA /* Pods */,
+				297690A4985043D13EF5270F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		85AE297B25D717FA009661E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85AE297A25D717FA009661E6 /* GoonMaker.app */,
+				85AE299025D717FD009661E6 /* GoonMakerTests.xctest */,
+				85AE299B25D717FD009661E6 /* GoonMakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85AE297C25D717FA009661E6 /* GoonMaker */ = {
+			isa = PBXGroup;
+			children = (
+				85AE297D25D717FA009661E6 /* AppDelegate.swift */,
+				85AE297F25D717FA009661E6 /* SceneDelegate.swift */,
+				85AE298125D717FA009661E6 /* ViewController.swift */,
+				85AE29BA25D71C0D009661E6 /* Secrets.swift */,
+				85AE298325D717FA009661E6 /* Main.storyboard */,
+				85AE298625D717FD009661E6 /* Assets.xcassets */,
+				85AE298825D717FD009661E6 /* LaunchScreen.storyboard */,
+				85AE29B525D7189F009661E6 /* GoogleService-Info.plist */,
+				85AE298B25D717FD009661E6 /* Info.plist */,
+			);
+			path = GoonMaker;
+			sourceTree = "<group>";
+		};
+		85AE299325D717FD009661E6 /* GoonMakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				85AE299425D717FD009661E6 /* GoonMakerTests.swift */,
+				85AE299625D717FD009661E6 /* Info.plist */,
+			);
+			path = GoonMakerTests;
+			sourceTree = "<group>";
+		};
+		85AE299E25D717FD009661E6 /* GoonMakerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				85AE299F25D717FD009661E6 /* GoonMakerUITests.swift */,
+				85AE29A125D717FD009661E6 /* Info.plist */,
+			);
+			path = GoonMakerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85AE297925D717FA009661E6 /* GoonMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85AE29A425D717FD009661E6 /* Build configuration list for PBXNativeTarget "GoonMaker" */;
+			buildPhases = (
+				D6E2AA08FCA4701C283593AA /* [CP] Check Pods Manifest.lock */,
+				85AE297625D717FA009661E6 /* Sources */,
+				85AE297725D717FA009661E6 /* Frameworks */,
+				85AE297825D717FA009661E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoonMaker;
+			productName = GoonMaker;
+			productReference = 85AE297A25D717FA009661E6 /* GoonMaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85AE298F25D717FD009661E6 /* GoonMakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85AE29A725D717FD009661E6 /* Build configuration list for PBXNativeTarget "GoonMakerTests" */;
+			buildPhases = (
+				97D78682D9BEFCE305616FD8 /* [CP] Check Pods Manifest.lock */,
+				85AE298C25D717FD009661E6 /* Sources */,
+				85AE298D25D717FD009661E6 /* Frameworks */,
+				85AE298E25D717FD009661E6 /* Resources */,
+				210523846E908F780A35F026 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85AE299225D717FD009661E6 /* PBXTargetDependency */,
+			);
+			name = GoonMakerTests;
+			productName = GoonMakerTests;
+			productReference = 85AE299025D717FD009661E6 /* GoonMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		85AE299A25D717FD009661E6 /* GoonMakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85AE29AA25D717FD009661E6 /* Build configuration list for PBXNativeTarget "GoonMakerUITests" */;
+			buildPhases = (
+				8A820ADA15DE25838A8DCB06 /* [CP] Check Pods Manifest.lock */,
+				85AE299725D717FD009661E6 /* Sources */,
+				85AE299825D717FD009661E6 /* Frameworks */,
+				85AE299925D717FD009661E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85AE299D25D717FD009661E6 /* PBXTargetDependency */,
+			);
+			name = GoonMakerUITests;
+			productName = GoonMakerUITests;
+			productReference = 85AE299B25D717FD009661E6 /* GoonMakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85AE297225D717FA009661E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					85AE297925D717FA009661E6 = {
+						CreatedOnToolsVersion = 12.1.1;
+					};
+					85AE298F25D717FD009661E6 = {
+						CreatedOnToolsVersion = 12.1.1;
+						TestTargetID = 85AE297925D717FA009661E6;
+					};
+					85AE299A25D717FD009661E6 = {
+						CreatedOnToolsVersion = 12.1.1;
+						TestTargetID = 85AE297925D717FA009661E6;
+					};
+				};
+			};
+			buildConfigurationList = 85AE297525D717FA009661E6 /* Build configuration list for PBXProject "GoonMaker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85AE297125D717FA009661E6;
+			productRefGroup = 85AE297B25D717FA009661E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85AE297925D717FA009661E6 /* GoonMaker */,
+				85AE298F25D717FD009661E6 /* GoonMakerTests */,
+				85AE299A25D717FD009661E6 /* GoonMakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85AE297825D717FA009661E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AE298A25D717FD009661E6 /* LaunchScreen.storyboard in Resources */,
+				85AE29B625D7189F009661E6 /* GoogleService-Info.plist in Resources */,
+				85AE298725D717FD009661E6 /* Assets.xcassets in Resources */,
+				85AE298525D717FA009661E6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AE298E25D717FD009661E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AE299925D717FD009661E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		210523846E908F780A35F026 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoonMakerTests/Pods-GoonMakerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoonMakerTests/Pods-GoonMakerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoonMakerTests/Pods-GoonMakerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A820ADA15DE25838A8DCB06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoonMaker-GoonMakerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97D78682D9BEFCE305616FD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoonMakerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6E2AA08FCA4701C283593AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoonMaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85AE297625D717FA009661E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AE298225D717FA009661E6 /* ViewController.swift in Sources */,
+				85AE29BB25D71C0D009661E6 /* Secrets.swift in Sources */,
+				85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */,
+				85AE298025D717FA009661E6 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AE298C25D717FD009661E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AE299525D717FD009661E6 /* GoonMakerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AE299725D717FD009661E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AE29A025D717FD009661E6 /* GoonMakerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85AE299225D717FD009661E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85AE297925D717FA009661E6 /* GoonMaker */;
+			targetProxy = 85AE299125D717FD009661E6 /* PBXContainerItemProxy */;
+		};
+		85AE299D25D717FD009661E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85AE297925D717FA009661E6 /* GoonMaker */;
+			targetProxy = 85AE299C25D717FD009661E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85AE298325D717FA009661E6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85AE298425D717FA009661E6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		85AE298825D717FD009661E6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85AE298925D717FD009661E6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85AE29A225D717FD009661E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85AE29A325D717FD009661E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85AE29A525D717FD009661E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61C7FDCD5E53517D7D829572 /* Pods-GoonMaker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoonMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85AE29A625D717FD009661E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1B452A0FC756CAABA5F7212 /* Pods-GoonMaker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoonMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		85AE29A825D717FD009661E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E6DEF2B1B15E429A4A3C49 /* Pods-GoonMakerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoonMakerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoonMaker.app/GoonMaker";
+			};
+			name = Debug;
+		};
+		85AE29A925D717FD009661E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DACE9C2F1000793269A2A9A /* Pods-GoonMakerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoonMakerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoonMaker.app/GoonMaker";
+			};
+			name = Release;
+		};
+		85AE29AB25D717FD009661E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5FA646CF80E53A2AE34FD4B /* Pods-GoonMaker-GoonMakerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoonMakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoonMaker;
+			};
+			name = Debug;
+		};
+		85AE29AC25D717FD009661E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 085766E2B96BB11450204034 /* Pods-GoonMaker-GoonMakerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GoonMakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoonMaker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85AE297525D717FA009661E6 /* Build configuration list for PBXProject "GoonMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85AE29A225D717FD009661E6 /* Debug */,
+				85AE29A325D717FD009661E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85AE29A425D717FD009661E6 /* Build configuration list for PBXNativeTarget "GoonMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85AE29A525D717FD009661E6 /* Debug */,
+				85AE29A625D717FD009661E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85AE29A725D717FD009661E6 /* Build configuration list for PBXNativeTarget "GoonMakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85AE29A825D717FD009661E6 /* Debug */,
+				85AE29A925D717FD009661E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85AE29AA25D717FD009661E6 /* Build configuration list for PBXNativeTarget "GoonMakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85AE29AB25D717FD009661E6 /* Debug */,
+				85AE29AC25D717FD009661E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85AE297225D717FA009661E6 /* Project object */;
+}

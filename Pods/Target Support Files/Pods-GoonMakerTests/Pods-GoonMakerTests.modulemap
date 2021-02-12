@@ -1,0 +1,6 @@
+framework module Pods_GoonMakerTests {
+  umbrella header "Pods-GoonMakerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,8 +18,8 @@
 		85AE298A25D717FD009661E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AE298825D717FD009661E6 /* LaunchScreen.storyboard */; };
 		85AE299525D717FD009661E6 /* GoonMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE299425D717FD009661E6 /* GoonMakerTests.swift */; };
 		85AE29A025D717FD009661E6 /* GoonMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE299F25D717FD009661E6 /* GoonMakerUITests.swift */; };
-		85AE29B625D7189F009661E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85AE29B525D7189F009661E6 /* GoogleService-Info.plist */; };
-		85AE29BB25D71C0D009661E6 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE29BA25D71C0D009661E6 /* Secrets.swift */; };
+		880F132425D728CC00532BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880F132325D728CC00532BB5 /* GoogleService-Info.plist */; };
+		88C3916D25D72268007D71C3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3916C25D72268007D71C3 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,8 @@
 		85AE299B25D717FD009661E6 /* GoonMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoonMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AE299F25D717FD009661E6 /* GoonMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoonMakerUITests.swift; sourceTree = "<group>"; };
 		85AE29A125D717FD009661E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85AE29B525D7189F009661E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		85AE29BA25D71C0D009661E6 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		880F132325D728CC00532BB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88C3916C25D72268007D71C3 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A1B452A0FC756CAABA5F7212 /* Pods-GoonMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker.release.xcconfig"; path = "Target Support Files/Pods-GoonMaker/Pods-GoonMaker.release.xcconfig"; sourceTree = "<group>"; };
 		B5D0F07AE829E837D5272E38 /* Pods_GoonMaker_GoonMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoonMaker_GoonMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8C2B03E1FDBED90DC36A31 /* Pods_GoonMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoonMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +105,6 @@
 				E9E6DEF2B1B15E429A4A3C49 /* Pods-GoonMakerTests.debug.xcconfig */,
 				4DACE9C2F1000793269A2A9A /* Pods-GoonMakerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,11 +146,11 @@
 				85AE297D25D717FA009661E6 /* AppDelegate.swift */,
 				85AE297F25D717FA009661E6 /* SceneDelegate.swift */,
 				85AE298125D717FA009661E6 /* ViewController.swift */,
-				85AE29BA25D71C0D009661E6 /* Secrets.swift */,
+				88C3916C25D72268007D71C3 /* Secrets.swift */,
 				85AE298325D717FA009661E6 /* Main.storyboard */,
 				85AE298625D717FD009661E6 /* Assets.xcassets */,
 				85AE298825D717FD009661E6 /* LaunchScreen.storyboard */,
-				85AE29B525D7189F009661E6 /* GoogleService-Info.plist */,
+				880F132325D728CC00532BB5 /* GoogleService-Info.plist */,
 				85AE298B25D717FD009661E6 /* Info.plist */,
 			);
 			path = GoonMaker;
@@ -282,8 +281,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880F132425D728CC00532BB5 /* GoogleService-Info.plist in Resources */,
 				85AE298A25D717FD009661E6 /* LaunchScreen.storyboard in Resources */,
-				85AE29B625D7189F009661E6 /* GoogleService-Info.plist in Resources */,
 				85AE298725D717FD009661E6 /* Assets.xcassets in Resources */,
 				85AE298525D717FA009661E6 /* Main.storyboard in Resources */,
 			);
@@ -397,7 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85AE298225D717FA009661E6 /* ViewController.swift in Sources */,
-				85AE29BB25D71C0D009661E6 /* Secrets.swift in Sources */,
+				88C3916D25D72268007D71C3 /* Secrets.swift in Sources */,
 				85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */,
 				85AE298025D717FA009661E6 /* SceneDelegate.swift in Sources */,
 			);
@@ -582,7 +581,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMaker;
+				PRODUCT_BUNDLE_IDENTIFIER = goons.GoonMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -601,7 +600,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = goon.GoonMaker;
+				PRODUCT_BUNDLE_IDENTIFIER = goons.GoonMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

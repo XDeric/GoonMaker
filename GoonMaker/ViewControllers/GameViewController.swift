@@ -9,7 +9,7 @@ import UIKit
 import DSSlider
 
 class GameViewController: UIViewController {
-    
+     //MARK:- IBOutlets
     @IBOutlet weak var sliderContainer1: UIView!
     @IBOutlet weak var sliderContainer2: UIView!
     @IBOutlet weak var sliderContainer3: UIView!
@@ -17,7 +17,21 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
+  //MARK:- Variable and Constants
+    //Score
+    var slider1ScoreValue = 0
+    var slider2ScoreValue = 0
+    var slider3ScoreValue = 0
+    var slider4ScoreValue = 0
+    var currentScore = 0 {
+        didSet {
+            scoreLabel.text = ("\(currentScore)")
+        }
+    }
+    
+    // Timer
     var timerIsPaused: Bool = true
     var timer = Timer()
     var seconds: Int = 0 {
@@ -41,6 +55,9 @@ class GameViewController: UIViewController {
         }
     }
     
+    var gameSession: GameSession?
+    
+     //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSlider(slider: sliderContainer1)
@@ -48,7 +65,13 @@ class GameViewController: UIViewController {
         setupSlider(slider: sliderContainer3)
         setupSlider(slider: sliderContainer4)
     }
-    
+    private func reduceScore() {
+        let scores = [slider1ScoreValue, slider2ScoreValue, slider3ScoreValue, slider4ScoreValue]
+        let totalScore = scores.reduce(0, { x, y in
+            x + y
+        })
+        currentScore = totalScore
+    }
     private func startTimer() {
         timerIsPaused.toggle()
         if timerIsPaused == false {
@@ -62,6 +85,11 @@ class GameViewController: UIViewController {
                     }
                 } else {
                     self.seconds = self.seconds + 1
+                    self.slider1ScoreValue += 1
+                    self.slider2ScoreValue += 1
+                    self.slider3ScoreValue += 1
+                    self.slider4ScoreValue += 1
+                    self.reduceScore()
                 }
             }
         } else {
@@ -82,7 +110,7 @@ class GameViewController: UIViewController {
 }
 extension GameViewController : DSSliderDelegate {
     func sliderDidFinishSliding(_ slider: DSSlider, at position: DSSliderPosition) {
-        print("slide")
+        
     }
 }
 

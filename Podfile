@@ -10,6 +10,7 @@ target 'GoonMaker' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
+  pod 'DSSlider', '~> 0.0.4'
 
   target 'GoonMakerTests' do
     inherit! :search_paths

@@ -7,10 +7,15 @@
 
 import UIKit
 
+
 class LeaderboardViewController: UIViewController {
+    
+    @IBOutlet weak var leaderboardTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+         
 
     }
 

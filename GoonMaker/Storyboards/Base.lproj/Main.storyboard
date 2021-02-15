@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yL-8I-9sh">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
@@ -9,7 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-
         <!--Navigation Controller-->
         <scene sceneID="aYw-el-QS5">
             <objects>
@@ -26,13 +24,11 @@
             </objects>
             <point key="canvasLocation" x="-1482" y="43"/>
         </scene>
-
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="GoonMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -117,9 +113,14 @@
                                     <constraint firstItem="5Km-wW-iy1" firstAttribute="centerX" secondItem="pTJ-ps-YGV" secondAttribute="centerX" id="iDY-f7-p5N"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AAA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-0Q-IqH">
+                                <rect key="frame" x="190.33333333333334" y="666.33333333333337" width="33.333333333333343" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="cth-hF-rwF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5Ij-s7-5ft"/>
@@ -130,6 +131,8 @@
                             <constraint firstItem="pTJ-ps-YGV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="J1s-Ic-eB2"/>
                             <constraint firstItem="gmV-He-Flm" firstAttribute="top" secondItem="glQ-wV-xem" secondAttribute="bottom" constant="8" symbolic="YES" id="MN2-aK-zkF"/>
                             <constraint firstItem="cth-hF-rwF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QoB-v0-wtN"/>
+                            <constraint firstItem="LrE-0Q-IqH" firstAttribute="centerX" secondItem="5Km-wW-iy1" secondAttribute="centerX" id="Se1-af-Azd"/>
+                            <constraint firstItem="LrE-0Q-IqH" firstAttribute="top" secondItem="pTJ-ps-YGV" secondAttribute="bottom" constant="8" id="T8N-1c-1os"/>
                             <constraint firstItem="A0U-d4-7Lb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="fPK-ka-vHH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YyM-44-XvQ" secondAttribute="trailing" constant="20" id="fe5-RH-WpK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o6L-yp-ISj" secondAttribute="bottom" constant="30" id="jO7-ia-lAj"/>
@@ -152,7 +155,7 @@
                         <outlet property="sliderStackView" destination="A0U-d4-7Lb" id="rti-yN-42C"/>
                         <outlet property="startTimerButton" destination="glQ-wV-xem" id="IiC-Mo-yyK"/>
                         <outlet property="timerLabel" destination="gmV-He-Flm" id="R59-vZ-HFx"/>
-
+                        <outlet property="userNameLabel" destination="LrE-0Q-IqH" id="ezn-y4-nm3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

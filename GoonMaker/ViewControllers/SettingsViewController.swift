@@ -10,9 +10,9 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
-    
-    let dataPersistence = PersistenceHelper()
+
     let defaults = UserDefaults.standard
+    
     var name: String = "" {
         didSet {
             nameTextField.placeholder = name

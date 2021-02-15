@@ -76,18 +76,32 @@ class GameViewController: UIViewController {
         }
     }
     
-    var gameSession: GameSession?
+    var gameSession: GameSession? {
+        didSet {
+            print(gameSession?.userScore.userName)
+        }
+    }
+    var defaults = UserDefaults.standard
     
      //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSliders()
+        // TODO: Add userDefault functions to PersistenceHelper
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if let userName = defaults.string(forKey: "userName") {
+            gameSession?.userScore.userName = userName
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         /*
          NOTE: This will rotate the entire sliderStack 90 degrees, to a vertical Orientation
         sliderStackView.transform = CGAffineTransform.init(rotationAngle: .pi/2)
          */
+        
+
     }
     
      //MARK:- Functions

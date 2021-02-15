@@ -10,6 +10,8 @@
 		0D0D943774E3DC5576907AAE /* Pods_GoonMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8C2B03E1FDBED90DC36A31 /* Pods_GoonMakerTests.framework */; };
 		3C89968789FB75A97468FE92 /* Pods_GoonMaker_GoonMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D0F07AE829E837D5272E38 /* Pods_GoonMaker_GoonMakerUITests.framework */; };
 		537A5A905B4D6FACCA9FE1FB /* Pods_GoonMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D132695C18BD2FF2BE3C7C53 /* Pods_GoonMaker.framework */; };
+		8532AE4525DB252600E7BCBB /* FirebaseStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532AE4425DB252500E7BCBB /* FirebaseStoreService.swift */; };
+		8532AE4F25DB26C600E7BCBB /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532AE4E25DB26C600E7BCBB /* UserInfo.swift */; };
 		85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE297D25D717FA009661E6 /* AppDelegate.swift */; };
 		85AE298025D717FA009661E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE297F25D717FA009661E6 /* SceneDelegate.swift */; };
 		85AE298225D717FA009661E6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE298125D717FA009661E6 /* GameViewController.swift */; };
@@ -52,6 +54,8 @@
 		085766E2B96BB11450204034 /* Pods-GoonMaker-GoonMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker-GoonMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-GoonMaker-GoonMakerUITests/Pods-GoonMaker-GoonMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4DACE9C2F1000793269A2A9A /* Pods-GoonMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMakerTests.release.xcconfig"; path = "Target Support Files/Pods-GoonMakerTests/Pods-GoonMakerTests.release.xcconfig"; sourceTree = "<group>"; };
 		61C7FDCD5E53517D7D829572 /* Pods-GoonMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoonMaker.debug.xcconfig"; path = "Target Support Files/Pods-GoonMaker/Pods-GoonMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		8532AE4425DB252500E7BCBB /* FirebaseStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreService.swift; sourceTree = "<group>"; };
+		8532AE4E25DB26C600E7BCBB /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		85AE297A25D717FA009661E6 /* GoonMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoonMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AE297D25D717FA009661E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AE297F25D717FA009661E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 			children = (
 				8888EA7925D72E7D000CE885 /* GameSessionModel.swift */,
 				8888EA8725D731AD000CE885 /* UserDefaults.swift */,
+				8532AE4425DB252500E7BCBB /* FirebaseStoreService.swift */,
+				8532AE4E25DB26C600E7BCBB /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,9 +489,11 @@
 				886851A625DAC9F10006A7E0 /* FileManager+Extension.swift in Sources */,
 				88C3916D25D72268007D71C3 /* Secrets.swift in Sources */,
 				8888EA9D25D73554000CE885 /* SettingsViewController.swift in Sources */,
+				8532AE4F25DB26C600E7BCBB /* UserInfo.swift in Sources */,
 				8888EA8825D731AD000CE885 /* UserDefaults.swift in Sources */,
 				85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */,
 				8888EA7A25D72E7D000CE885 /* GameSessionModel.swift in Sources */,
+				8532AE4525DB252600E7BCBB /* FirebaseStoreService.swift in Sources */,
 				8888EAA225D73561000CE885 /* LeaderboardViewController.swift in Sources */,
 				8868519A25DAC79D0006A7E0 /* PersistenceHelper.swift in Sources */,
 				85AE298025D717FA009661E6 /* SceneDelegate.swift in Sources */,

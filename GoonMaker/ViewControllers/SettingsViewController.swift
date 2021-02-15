@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     
     let dataPersistence = PersistenceHelper()
+    let defaults = UserDefaults.standard
     var name: String = "" {
         didSet {
             nameTextField.placeholder = name
@@ -21,21 +22,22 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        loadName()
     }
     private func saveName(name: String) {
-        try? dataPersistence.changeUserName(name: name)
+        defaults.setValue(name, forKey: "userName")
+        loadName()
     }
     private func loadName() {
-        do {
-            name = try PersistenceHelper.loadUserName()
-            
-        } catch {
-            print("Error loading userName: \(error)")
+        if let userName = defaults.string(forKey: "userName") {
+            name = userName
         }
     }
     @IBAction func submitNameButtonPressed(_ sender: UIButton) {
-        
+        let userName = nameTextField.text ?? "ERROR"
+        saveName(name: userName)
     }
     
 }

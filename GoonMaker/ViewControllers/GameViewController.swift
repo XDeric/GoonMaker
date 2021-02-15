@@ -8,7 +8,7 @@
 import UIKit
 
 class GameViewController: UIViewController {
-     //MARK:- IBOutlets
+    //MARK:- IBOutlets
     @IBOutlet weak var slider1: UISlider!
     @IBOutlet weak var slider2: UISlider!
     @IBOutlet weak var slider3: UISlider!
@@ -18,13 +18,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-  //MARK:- Variable and Constants
+    @IBOutlet weak var breathingButtonBoundary: UIView!
+    @IBOutlet weak var breathingButton: UIButton!
+    
+    //MARK:- Variable and Constants
     //Score
     var slider1MaxValue: Float = 0.0 {
         didSet {
             animateSliderImage(slider: slider1)
             checkSliderValue(slider: slider1)
-            
         }
     }
     var slider2MaxValue: Float = 0.0 {
@@ -58,7 +60,7 @@ class GameViewController: UIViewController {
     var seconds: Int = 0 {
         didSet {
             if seconds < 10 && minutes < 10 {
-            timerLabel.text = ("0\(minutes):0\(seconds)")
+                timerLabel.text = ("0\(minutes):0\(seconds)")
             } else if seconds < 10 && minutes >= 10 {
                 timerLabel.text = ("\(minutes):0\(seconds)")
             } else {
@@ -77,18 +79,17 @@ class GameViewController: UIViewController {
     }
     
     var gameSession: GameSession? {
+        // TODO: Add userDefault functions to PersistenceHelper
         didSet {
-            print(gameSession?.userScore.userName)
+            print(gameSession?.userScore.userName ?? "ERROR")
         }
     }
     var defaults = UserDefaults.standard
     
-     //MARK:- View Lifecycles
+    //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSliders()
-        // TODO: Add userDefault functions to PersistenceHelper
-
     }
     override func viewWillAppear(_ animated: Bool) {
         if let userName = defaults.string(forKey: "userName") {
@@ -96,23 +97,12 @@ class GameViewController: UIViewController {
         }
     }
     override func viewDidAppear(_ animated: Bool) {
-        /*
-         NOTE: This will rotate the entire sliderStack 90 degrees, to a vertical Orientation
-        sliderStackView.transform = CGAffineTransform.init(rotationAngle: .pi/2)
-         */
-        
-
+        //NOTE: This will rotate the entire sliderStack 90 degrees, to a vertical Orientation
+        // sliderStackView.transform = CGAffineTransform.init(rotationAngle: .pi/2)
+        setupBtnBoundary()
     }
     
-     //MARK:- Functions
-
-//    private func reduceScore() {
-//        let scores = [slider1MaxValue, slider2MaxValue, slider3MaxValue, slider4MaxValue]
-//        let totalScore = scores.reduce(0, { x, y in
-//            x + y
-//        })
-//        currentGameScore = totalScore
-//    }
+    //MARK:- Functions
     private func startTimer() {
         timerIsPaused.toggle()
         if timerIsPaused == false {
@@ -175,7 +165,55 @@ class GameViewController: UIViewController {
             slider.isEnabled = true
         }
     }
-     //MARK:- @IBActions
+    func setupBtnBoundary() {
+        breathingButtonBoundary.layer.cornerRadius = breathingButtonBoundary.frame.width / 2
+        breathingButton.layer.cornerRadius = breathingButton.frame.width / 2
+    }
+    func startButtonAnimation() {
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options: .curveEaseIn) {
+            self.startTimerButton.transform = CGAffineTransform(rotationAngle: .pi/2)
+            self.startTimerButton.transform = CGAffineTransform(rotationAngle: .pi)
+            self.startTimerButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            self.startTimerButton.alpha = 0
+        } completion: { _ in
+            print("start button poof")
+        }
+    }
+    @objc func animate() {
+        UIView.animateKeyframes(withDuration: 10,
+                                delay: 0.5,
+                                options: [.allowUserInteraction, .beginFromCurrentState]) {
+            self.breathingButton.transform = CGAffineTransform(scaleX: 5, y: 5)
+            UIView.addKeyframe(withRelativeStartTime: 0.5/4, relativeDuration: 1/4) {
+                self.breathingButton.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
+                self.breathingButton.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
+                self.breathingButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
+            }
+        } completion: { _ in
+            print("stop")
+            self.breathingButton.isEnabled = false
+        }
+    }
+    func revertAnimate() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear, .beginFromCurrentState]) {
+            //            self.breathingButton.isEnabled = true
+            self.breathingButton.layer.removeAllAnimations()
+            self.breathingButton.transform = .identity
+            self.breathingButton.backgroundColor = #colorLiteral(red: 0.2052684426, green: 0.7807833552, blue: 0.3487253785, alpha: 1)
+        } completion: { _ in
+            self.breathingButton.isEnabled = true
+            print("reverted")
+            self.animate()
+        }
+    }
+    
+    //MARK:- @IBActions
     @objc func onSliderValChanged(slider: UISlider, event: UIEvent) {
         var min: Float = 0.0
         if let touchEvent = event.allTouches?.first {
@@ -241,8 +279,14 @@ class GameViewController: UIViewController {
         if timerIsPaused {
             startTimerButton.setTitle("Start", for: .normal)
         } else {
+            //            startButtonAnimation()
+            animate()
+            // TODO: Update animate func to stop the animation when the game is not being played?
             startTimerButton.setTitle("Stop", for: .normal)
         }
+    }
+    @IBAction func breathingButtonPressed(_ sender: UIButton) {
+        revertAnimate()
     }
     
 }
@@ -256,49 +300,5 @@ extension GameViewController {
         slider2.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
         slider3.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
         slider4.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
-    }
-}
-
-
-
-// Extension UIView from here: https://stackoverflow.com/questions/48804229/how-do-i-have-to-modify-my-uiview-extension-if-i-wanted-to-animate-the-auto-layo
-enum ConstraintType {
-    case top, leading, trailing, bottom, width, height
-}
-
-extension UIView {
-
-    func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> [ConstraintType : NSLayoutConstraint] {
-        //translate the view's autoresizing mask into Auto Layout constraints
-        translatesAutoresizingMaskIntoConstraints = false
-
-        var constraints: [ConstraintType : NSLayoutConstraint] = [:]
-
-        if let top = top {
-            constraints[.top] = topAnchor.constraint(equalTo: top, constant: padding.top)
-        }
-
-        if let leading = leading {
-            constraints[.leading] = leadingAnchor.constraint(equalTo: leading, constant: padding.left)
-        }
-
-        if let bottom = bottom {
-            constraints[.bottom] = bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom)
-        }
-
-        if let trailing = trailing {
-            constraints[.trailing] = trailingAnchor.constraint(equalTo: trailing, constant: -padding.right)
-        }
-
-        if size.width != 0 {
-            constraints[.width] = widthAnchor.constraint(equalToConstant: size.width)
-        }
-
-        if size.height != 0 {
-            constraints[.height] = heightAnchor.constraint(equalToConstant: size.height)
-        }
-        let constraintsArray = Array<NSLayoutConstraint>(constraints.values)
-        NSLayoutConstraint.activate(constraintsArray)
-        return constraints
     }
 }

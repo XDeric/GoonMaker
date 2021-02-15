@@ -10,7 +10,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
-
+    
     let defaults = UserDefaults.standard
     
     var name: String = "" {

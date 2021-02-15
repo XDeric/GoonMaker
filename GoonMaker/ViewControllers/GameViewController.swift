@@ -98,7 +98,7 @@ class GameViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         //NOTE: This will rotate the entire sliderStack 90 degrees, to a vertical Orientation
-        // sliderStackView.transform = CGAffineTransform.init(rotationAngle: .pi/2)
+         sliderStackView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
         setupBtnBoundary()
     }
     

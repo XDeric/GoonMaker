@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import DSSlider
 
 class GameViewController: UIViewController {
+
     //MARK:- IBOutlets
     @IBOutlet weak var slider1: UISlider!
     @IBOutlet weak var slider2: UISlider!
@@ -288,9 +290,15 @@ class GameViewController: UIViewController {
     @IBAction func breathingButtonPressed(_ sender: UIButton) {
         revertAnimate()
     }
+
     
 }
 
+extension GameViewController : DSSliderDelegate {
+    func sliderDidFinishSliding(_ slider: DSSlider, at position: DSSliderPosition) {
+        print("slide")
+    }
+}
 
 //MARK:- Slider Setup Funcs
 extension GameViewController {

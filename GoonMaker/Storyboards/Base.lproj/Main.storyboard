@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yL-8I-9sh">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
@@ -8,6 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+
         <!--Navigation Controller-->
         <scene sceneID="aYw-el-QS5">
             <objects>
@@ -24,11 +26,13 @@
             </objects>
             <point key="canvasLocation" x="-1482" y="43"/>
         </scene>
+
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="GoonMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -115,6 +119,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="cth-hF-rwF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5Ij-s7-5ft"/>
@@ -147,6 +152,7 @@
                         <outlet property="sliderStackView" destination="A0U-d4-7Lb" id="rti-yN-42C"/>
                         <outlet property="startTimerButton" destination="glQ-wV-xem" id="IiC-Mo-yyK"/>
                         <outlet property="timerLabel" destination="gmV-He-Flm" id="R59-vZ-HFx"/>
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

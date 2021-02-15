@@ -24,15 +24,35 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var buttonBoundary: UIView!
     @IBOutlet weak var shrnkButtonOutlet: UIButton!
+    @IBOutlet weak var startBtn: UIButton!
     
     @IBAction func shrinkButton(_ sender: Any) {
         revertAnimate()
     }
     
+    @IBAction func strtButton(_ sender: UIButton) {
+        startBtn.isEnabled = false
+        startButtonAnimation()
+        animate()
+    }
     func setupBtnBoundary(){
         buttonBoundary.layer.cornerRadius = buttonBoundary.frame.width / 2
         shrnkButtonOutlet.layer.cornerRadius = shrnkButtonOutlet.frame.width / 2
         
+    }
+    
+    func startButtonAnimation(){
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options: .curveEaseIn) {
+            self.startBtn.transform = CGAffineTransform(rotationAngle: .pi/2)
+            self.startBtn.transform = CGAffineTransform(rotationAngle: .pi)
+            self.startBtn.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            self.startBtn.alpha = 0
+        } completion: { _ in
+            print("start button poof")
+        }
+
     }
     
     @objc func animate(){
@@ -49,11 +69,16 @@ class GameViewController: UIViewController {
             UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
                 self.shrnkButtonOutlet.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
             }
+        } completion: { _ in
+            print("stop")
+            self.shrnkButtonOutlet.isEnabled = false
         }
         
     }
     func revertAnimate(){
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear, .beginFromCurrentState]) {
+            self.shrnkButtonOutlet.isEnabled = true
+            self.shrnkButtonOutlet.layer.removeAllAnimations()
             self.shrnkButtonOutlet.transform = .identity
             self.shrnkButtonOutlet.backgroundColor = #colorLiteral(red: 0.2052684426, green: 0.7807833552, blue: 0.3487253785, alpha: 1)
         } completion: { _ in
@@ -72,7 +97,6 @@ class GameViewController: UIViewController {
         setupSliders(slider: slider3, UIViewContainer: sliderContainer3)
         viewSetup()
         setupBtnBoundary()
-        animate()
 //        gameTimer =  Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
         //        sliderHStackView.transform = CGAffineTransform(rotationAngle: .pi / 2)
         

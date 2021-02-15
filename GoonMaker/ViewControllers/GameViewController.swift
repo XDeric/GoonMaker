@@ -92,13 +92,13 @@ class GameViewController: UIViewController {
     
      //MARK:- Functions
 
-    private func reduceScore() {
-        let scores = [slider1MaxValue, slider2MaxValue, slider3MaxValue, slider4MaxValue]
-        let totalScore = scores.reduce(0, { x, y in
-            x + y
-        })
-        currentGameScore = totalScore
-    }
+//    private func reduceScore() {
+//        let scores = [slider1MaxValue, slider2MaxValue, slider3MaxValue, slider4MaxValue]
+//        let totalScore = scores.reduce(0, { x, y in
+//            x + y
+//        })
+//        currentGameScore = totalScore
+//    }
     private func startTimer() {
         timerIsPaused.toggle()
         if timerIsPaused == false {

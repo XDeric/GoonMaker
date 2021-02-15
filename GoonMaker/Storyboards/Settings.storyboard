@@ -1,7 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="Ymb-dM-r8T">
+            <objects>
+                <viewController storyboardIdentifier="Settings" id="5gA-Tg-3nQ" customClass="SettingsViewController" customModule="GoonMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Gz-Vz-vTt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RT9-6Q-fh6">
+                                <rect key="frame" x="171" y="171" width="72" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="CR8-cZ-Ca9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-fz-CZN">
+                                <rect key="frame" x="160.5" y="265" width="93" height="30"/>
+                                <state key="normal" title="Submit Name"/>
+                                <connections>
+                                    <action selector="submitNameButtonPressed:" destination="hUI-ss-XGV" eventType="touchUpInside" id="g1k-MX-Aun"/>
+                                    <action selector="submitNameButtonPressed:" destination="5gA-Tg-3nQ" eventType="touchUpInside" id="ie4-cE-ogd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="scZ-Z4-sXW"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="RT9-6Q-fh6" firstAttribute="top" secondItem="scZ-Z4-sXW" secondAttribute="top" constant="127" id="8VT-nu-qPf"/>
+                            <constraint firstItem="GGx-fz-CZN" firstAttribute="top" secondItem="RT9-6Q-fh6" secondAttribute="bottom" constant="60" id="ESe-Ws-1XA"/>
+                            <constraint firstItem="RT9-6Q-fh6" firstAttribute="centerX" secondItem="GGx-fz-CZN" secondAttribute="centerX" id="ace-Gm-DxW"/>
+                            <constraint firstItem="GGx-fz-CZN" firstAttribute="centerX" secondItem="6Gz-Vz-vTt" secondAttribute="centerX" id="mcY-w3-rtx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="RT9-6Q-fh6" id="lfX-6G-riY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhz-v6-nWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="hUI-ss-XGV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="-110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

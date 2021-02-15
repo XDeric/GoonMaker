@@ -216,6 +216,12 @@ class GameViewController: UIViewController {
         timerLabel.text = "00:00"
         timer.invalidate()
     }
+    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsViewController = storyboard.instantiateViewController(identifier: "Settings")
+        navigationController?.pushViewController(settingsViewController, animated: true)
+    }
+    
     @IBAction func startButtonPressed(_ sender: UIButton) {
         startTimer()
         if timerIsPaused {

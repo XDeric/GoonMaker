@@ -11,7 +11,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Ymb-dM-r8T">
             <objects>
-                <viewController id="5gA-Tg-3nQ" customClass="SettingsViewController" customModule="GoonMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" id="5gA-Tg-3nQ" customClass="SettingsViewController" customModule="GoonMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Gz-Vz-vTt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -167,6 +167,23 @@ class GameViewController: UIViewController {
             slider.isEnabled = true
         }
     }
+    func animateSliderBackgroundColors(_ slider: UISlider) {
+        UIView.animateKeyframes(withDuration: 10,
+                                delay: 0.5,
+                                options: [.allowUserInteraction, .beginFromCurrentState]) {
+            UIView.addKeyframe(withRelativeStartTime: 0.5/4, relativeDuration: 1/4) {
+                slider.minimumTrackTintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
+                slider.minimumTrackTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
+                slider.minimumTrackTintColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
+            }
+        } completion: { _ in
+            
+        }
+    }
     func setupBtnBoundary() {
         breathingButtonBoundary.layer.cornerRadius = breathingButtonBoundary.frame.width / 2
         breathingButton.layer.cornerRadius = breathingButton.frame.width / 2
@@ -227,15 +244,15 @@ class GameViewController: UIViewController {
                         slider1MaxValue = slider.value
                     }
                 case slider2:
-                    if slider.value > slider1MaxValue {
+                    if slider.value > slider2MaxValue {
                         slider2MaxValue = slider.value
                     }
                 case slider3:
-                    if slider.value > slider1MaxValue {
+                    if slider.value > slider3MaxValue {
                         slider3MaxValue = slider.value
                     }
                 case slider4:
-                    if slider.value > slider1MaxValue {
+                    if slider.value > slider4MaxValue {
                         slider4MaxValue = slider.value
                     }
                 default:
@@ -245,13 +262,37 @@ class GameViewController: UIViewController {
                 min = slider.value
                 switch slider {
                 case slider1:
-                    currentGameScore = (currentGameScore + (slider1MaxValue - min))
+                    if slider.value > slider1MaxValue {
+                        slider.setValue(slider1MaxValue, animated: false)
+                    } else if slider.value < slider1MaxValue {
+                        let sliderScore = (slider1MaxValue - min)
+                        currentGameScore = currentGameScore + sliderScore
+                        slider1MaxValue = min
+                    }
                 case slider2:
-                    currentGameScore = (currentGameScore + (slider2MaxValue - min))
+                    if slider.value > slider2MaxValue {
+                        slider.setValue(slider2MaxValue, animated: false)
+                    } else if slider.value < slider2MaxValue {
+                        let sliderScore = (slider2MaxValue - min)
+                        currentGameScore = currentGameScore + sliderScore
+                        slider2MaxValue = min
+                    }
                 case slider3:
-                    currentGameScore = (currentGameScore + (slider3MaxValue - min))
+                    if slider.value > slider3MaxValue {
+                        slider.setValue(slider3MaxValue, animated: false)
+                    } else if slider.value < slider3MaxValue {
+                        let sliderScore = (slider3MaxValue - min)
+                        currentGameScore = currentGameScore + sliderScore
+                        slider3MaxValue = min
+                    }
                 case slider4:
-                    currentGameScore = (currentGameScore + (slider4MaxValue - min))
+                    if slider.value > slider4MaxValue {
+                        slider.setValue(slider4MaxValue, animated: false)
+                    } else if slider.value < slider4MaxValue {
+                        let sliderScore = (slider4MaxValue - min)
+                        currentGameScore = currentGameScore + sliderScore
+                        slider4MaxValue = min
+                    }
                 default:
                     return
                 }
@@ -277,6 +318,10 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
+        animateSliderBackgroundColors(slider1)
+        animateSliderBackgroundColors(slider2)
+        animateSliderBackgroundColors(slider3)
+        animateSliderBackgroundColors(slider4)
         startTimer()
         if timerIsPaused {
             startTimerButton.setTitle("Start", for: .normal)

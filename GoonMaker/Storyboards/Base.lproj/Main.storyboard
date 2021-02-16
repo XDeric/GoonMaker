@@ -72,7 +72,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTJ-ps-YGV" userLabel="outer_Breathing View">
-                                <rect key="frame" x="103.5" y="546.5" width="207" height="207"/>
+                                <rect key="frame" x="103.5" y="518.5" width="207" height="207"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-oL-bjB" userLabel="inner_Breathing View">
                                         <rect key="frame" x="4" y="4" width="199" height="199"/>
@@ -127,11 +127,12 @@
                         <constraints>
                             <constraint firstItem="cth-hF-rwF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5Ij-s7-5ft"/>
                             <constraint firstItem="o6L-yp-ISj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7JX-pT-41H"/>
-                            <constraint firstItem="pTJ-ps-YGV" firstAttribute="top" secondItem="A0U-d4-7Lb" secondAttribute="bottom" constant="64" id="B3y-j0-5Ul"/>
+                            <constraint firstItem="pTJ-ps-YGV" firstAttribute="top" secondItem="A0U-d4-7Lb" secondAttribute="bottom" constant="36" id="B3y-j0-5Ul"/>
                             <constraint firstItem="A0U-d4-7Lb" firstAttribute="top" secondItem="gmV-He-Flm" secondAttribute="bottom" constant="16" id="Bam-nq-d97"/>
                             <constraint firstItem="glQ-wV-xem" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eut-Tu-UwZ"/>
                             <constraint firstItem="pTJ-ps-YGV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FX0-GJ-MUL"/>
                             <constraint firstItem="pTJ-ps-YGV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="J1s-Ic-eB2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pTJ-ps-YGV" secondAttribute="bottom" constant="20" id="J92-lm-K39"/>
                             <constraint firstItem="gmV-He-Flm" firstAttribute="top" secondItem="glQ-wV-xem" secondAttribute="bottom" constant="8" symbolic="YES" id="MN2-aK-zkF"/>
                             <constraint firstItem="cth-hF-rwF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QoB-v0-wtN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A0U-d4-7Lb" secondAttribute="trailing" constant="20" id="aBo-bg-Rjm"/>

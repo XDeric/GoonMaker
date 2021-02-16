@@ -50,7 +50,11 @@ class GameViewController: UIViewController {
             checkSliderValue(slider: slider4)
         }
     }
-    
+    var buttonMaxValue: Float = 0.0 {
+        didSet {
+            print(buttonMaxValue)
+        }
+    }
     var currentGameScore: Float = 0.0 {
         didSet {
             scoreLabel.text = ("\(currentGameScore.rounded())")
@@ -101,7 +105,7 @@ class GameViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         //NOTE: This will rotate the entire sliderStack 90 degrees, to a vertical Orientation
-         sliderStackView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
+//        sliderStackView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
         setupBtnBoundary()
     }
     
@@ -131,7 +135,7 @@ class GameViewController: UIViewController {
     }
     private func animateSliderImage(slider: UISlider) {
         let duration = 2.0
-        let climbRate: Float = 3.0
+        let climbRate: Float = 10.0
         switch slider {
         case slider1:
             checkSliderValue(slider: slider1)
@@ -158,6 +162,9 @@ class GameViewController: UIViewController {
         }
         self.view.layoutIfNeeded()
         let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn) {
+        }
+        if buttonMaxValue < 100 {
+            buttonMaxValue += 1
         }
         animator.startAnimation()
     }
@@ -229,6 +236,7 @@ class GameViewController: UIViewController {
             self.breathingButton.backgroundColor = #colorLiteral(red: 0.2052684426, green: 0.7807833552, blue: 0.3487253785, alpha: 1)
         } completion: { _ in
             self.breathingButton.isEnabled = true
+            self.buttonMaxValue = 0.0
             print("reverted")
             self.animate()
         }
@@ -335,16 +343,11 @@ class GameViewController: UIViewController {
         }
     }
     @IBAction func breathingButtonPressed(_ sender: UIButton) {
+        currentGameScore = currentGameScore + buttonMaxValue
         revertAnimate()
     }
 
     
-}
-
-extension GameViewController : DSSliderDelegate {
-    func sliderDidFinishSliding(_ slider: DSSlider, at position: DSSliderPosition) {
-        print("slide")
-    }
 }
 
 //MARK:- Slider Setup Funcs

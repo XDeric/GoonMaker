@@ -9,9 +9,9 @@ import UIKit
 
 class CustomSlider: UISlider {
 
-    @IBInspectable var trackHeight: CGFloat = 16
+    @IBInspectable var trackHeight: CGFloat = 24
 
-    @IBInspectable var thumbRadius: CGFloat = 14
+    @IBInspectable var thumbRadius: CGFloat = 26
 
     // Custom thumb view which will be converted to UIImage
     // and set as thumb. You can customize it's colors, border, etc.

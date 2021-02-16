@@ -20,32 +20,33 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    @IBOutlet weak var breathingButtonBoundary: UIView!
+    @IBOutlet weak var breathingButtonOuterBoundary: UIView!
+    @IBOutlet weak var breathingButtonInnerBoundary: UIView!
     @IBOutlet weak var breathingButton: UIButton!
     
     //MARK:- Variable and Constants
     //Score
     var slider1MaxValue: Float = 0.0 {
         didSet {
-            animateSliderImage(slider: slider1)
+//            animateSliderImage(slider: slider1)
             checkSliderValue(slider: slider1)
         }
     }
     var slider2MaxValue: Float = 0.0 {
         didSet {
-            animateSliderImage(slider: slider2)
+//            animateSliderImage(slider: slider2)
             checkSliderValue(slider: slider2)
         }
     }
     var slider3MaxValue: Float = 0.0 {
         didSet {
-            animateSliderImage(slider: slider3)
+//            animateSliderImage(slider: slider3)
             checkSliderValue(slider: slider3)
         }
     }
     var slider4MaxValue: Float = 0.0 {
         didSet {
-            animateSliderImage(slider: slider4)
+//            animateSliderImage(slider: slider4)
             checkSliderValue(slider: slider4)
         }
     }
@@ -129,7 +130,7 @@ class GameViewController: UIViewController {
         }
     }
     private func animateSliderImage(slider: UISlider) {
-        let duration = 1.0
+        let duration = 2.0
         let climbRate: Float = 3.0
         switch slider {
         case slider1:
@@ -168,25 +169,26 @@ class GameViewController: UIViewController {
         }
     }
     func animateSliderBackgroundColors(_ slider: UISlider) {
-        UIView.animateKeyframes(withDuration: 10,
-                                delay: 0.5,
-                                options: [.allowUserInteraction, .beginFromCurrentState]) {
-            UIView.addKeyframe(withRelativeStartTime: 0.5/4, relativeDuration: 1/4) {
-                slider.minimumTrackTintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-            }
-            UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
-                slider.minimumTrackTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-            }
-            UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
-                slider.minimumTrackTintColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
-            }
-        } completion: { _ in
-            
-        }
+//        UIView.animateKeyframes(withDuration: 1,
+//                                delay: 0.0,
+//                                options: [.allowUserInteraction, .beginFromCurrentState]) {
+//            UIView.addKeyframe(withRelativeStartTime: 0.5/4, relativeDuration: 1/4) {
+//                slider.minimumTrackTintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+//            }
+//            UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
+//                slider.minimumTrackTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+//            }
+//            UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
+//                slider.minimumTrackTintColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
+//            }
+//        } completion: { _ in
+//
+//        }
     }
     func setupBtnBoundary() {
-        breathingButtonBoundary.layer.cornerRadius = breathingButtonBoundary.frame.width / 2
+        breathingButtonOuterBoundary.layer.cornerRadius = breathingButtonOuterBoundary.frame.width / 2
         breathingButton.layer.cornerRadius = breathingButton.frame.width / 2
+        breathingButtonInnerBoundary.layer.cornerRadius = breathingButtonInnerBoundary.frame.width / 2
     }
     func startButtonAnimation() {
         UIView.animate(withDuration: 1,
@@ -318,10 +320,10 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
-        animateSliderBackgroundColors(slider1)
-        animateSliderBackgroundColors(slider2)
-        animateSliderBackgroundColors(slider3)
-        animateSliderBackgroundColors(slider4)
+//        animateSliderBackgroundColors(slider1)
+//        animateSliderBackgroundColors(slider2)
+//        animateSliderBackgroundColors(slider3)
+//        animateSliderBackgroundColors(slider4)
         startTimer()
         if timerIsPaused {
             startTimerButton.setTitle("Start", for: .normal)
@@ -353,5 +355,7 @@ extension GameViewController {
         slider2.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
         slider3.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
         slider4.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
+        
+        
     }
 }

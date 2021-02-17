@@ -30,7 +30,7 @@ extension LeaderboardViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = leaderboardTableView.dequeueReusableCell(withIdentifier: "leaderboardCell", for: indexPath)
-//         cell.textLabel?.text = 
+//        cell.textLabel?.text = 
 //         cell.detailTextLabel?.text =
         return cell
         

@@ -9,7 +9,7 @@ import UIKit
 import DSSlider
 
 class GameViewController: UIViewController {
-
+    
     //MARK:- IBOutlets
     @IBOutlet weak var slider1: UISlider!
     @IBOutlet weak var slider2: UISlider!
@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet weak var breathingButtonBoundary: UIView!
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var breathingButton: UIButton!
     
     //MARK:- Variable and Constants
@@ -80,10 +81,11 @@ class GameViewController: UIViewController {
         }
     }
     
-    var gameSession: GameSession? {
+    var gameSession = GameSession(isPlaying: false, lives: 3, userScore: UserScore(userName: "AAA", score: 0)) {
         // TODO: Add userDefault functions to PersistenceHelper
         didSet {
-            print(gameSession?.userScore.userName ?? "ERROR")
+            userNameLabel.text = gameSession.userScore.userName
+            print(gameSession.userScore.userName)
         }
     }
     var defaults = UserDefaults.standard
@@ -94,17 +96,21 @@ class GameViewController: UIViewController {
         setupSliders()
     }
     override func viewWillAppear(_ animated: Bool) {
-        if let userName = defaults.string(forKey: "userName") {
-            gameSession?.userScore.userName = userName
-        }
+        loadUserInfo()
     }
     override func viewDidAppear(_ animated: Bool) {
         //NOTE: This will rotate the entire sliderStack 90 degrees, to a vertical Orientation
-         sliderStackView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
+        sliderStackView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
         setupBtnBoundary()
+//        loadUserInfo()
     }
     
     //MARK:- Functions
+    private func loadUserInfo() {
+        if let userName = defaults.string(forKey: "userName") {
+            gameSession.userScore.userName = userName
+        }
+    }
     private func startTimer() {
         timerIsPaused.toggle()
         if timerIsPaused == false {
@@ -290,7 +296,7 @@ class GameViewController: UIViewController {
     @IBAction func breathingButtonPressed(_ sender: UIButton) {
         revertAnimate()
     }
-
+    
     
 }
 

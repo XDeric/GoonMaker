@@ -24,14 +24,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-fz-CZN">
-                                <rect key="frame" x="160.5" y="267" width="93" height="30"/>
-                                <state key="normal" title="Submit Name"/>
-                                <connections>
-                                    <action selector="submitNameButtonPressed:" destination="hUI-ss-XGV" eventType="touchUpInside" id="g1k-MX-Aun"/>
-                                    <action selector="submitNameButtonPressed:" destination="5gA-Tg-3nQ" eventType="touchUpInside" id="ie4-cE-ogd"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-Sb-8ES">
                                 <rect key="frame" x="170" y="98" width="74" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
@@ -44,23 +36,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-fz-CZN">
+                                <rect key="frame" x="160" y="343" width="93" height="30"/>
+                                <state key="normal" title="Submit Name"/>
+                                <connections>
+                                    <action selector="submitNameButtonPressed:" destination="hUI-ss-XGV" eventType="touchUpInside" id="g1k-MX-Aun"/>
+                                    <action selector="submitNameButtonPressed:" destination="5gA-Tg-3nQ" eventType="touchUpInside" id="ie4-cE-ogd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="scZ-Z4-sXW"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
                             <constraint firstItem="scZ-Z4-sXW" firstAttribute="trailing" secondItem="4Sn-Zg-5kW" secondAttribute="trailing" constant="52" id="0u9-hE-sAH"/>
+                            <constraint firstItem="scZ-Z4-sXW" firstAttribute="trailing" secondItem="GGx-fz-CZN" secondAttribute="trailing" constant="161" id="AS7-ar-VSL"/>
                             <constraint firstItem="scZ-Z4-sXW" firstAttribute="trailing" secondItem="6gR-Sb-8ES" secondAttribute="trailing" constant="170" id="CDD-z4-5JX"/>
                             <constraint firstItem="RT9-6Q-fh6" firstAttribute="top" secondItem="scZ-Z4-sXW" secondAttribute="top" constant="170" id="CIr-pT-oXd"/>
-                            <constraint firstItem="scZ-Z4-sXW" firstAttribute="bottom" secondItem="GGx-fz-CZN" secondAttribute="bottom" constant="565" id="PVq-iU-3tc"/>
                             <constraint firstItem="4Sn-Zg-5kW" firstAttribute="top" secondItem="scZ-Z4-sXW" secondAttribute="top" constant="129" id="YAs-6C-7gG"/>
                             <constraint firstItem="RT9-6Q-fh6" firstAttribute="top" secondItem="4Sn-Zg-5kW" secondAttribute="bottom" constant="20" id="aHN-Ds-Wmf"/>
                             <constraint firstItem="6gR-Sb-8ES" firstAttribute="top" secondItem="scZ-Z4-sXW" secondAttribute="top" constant="54" id="bih-bm-DLm"/>
+                            <constraint firstItem="GGx-fz-CZN" firstAttribute="top" secondItem="RT9-6Q-fh6" secondAttribute="bottom" constant="95" id="cOL-WE-tJN"/>
                             <constraint firstItem="4Sn-Zg-5kW" firstAttribute="top" secondItem="6gR-Sb-8ES" secondAttribute="bottom" constant="52" id="gcv-ji-KL1"/>
-                            <constraint firstItem="GGx-fz-CZN" firstAttribute="centerX" secondItem="6Gz-Vz-vTt" secondAttribute="centerX" id="mcY-w3-rtx"/>
                             <constraint firstItem="RT9-6Q-fh6" firstAttribute="leading" secondItem="scZ-Z4-sXW" secondAttribute="leading" constant="170" id="nrp-Ji-IAo"/>
+                            <constraint firstItem="GGx-fz-CZN" firstAttribute="leading" secondItem="scZ-Z4-sXW" secondAttribute="leading" constant="160" id="nwd-3y-Z05"/>
+                            <constraint firstItem="GGx-fz-CZN" firstAttribute="top" secondItem="scZ-Z4-sXW" secondAttribute="top" constant="299" id="qS1-Gb-5ql"/>
                             <constraint firstItem="4Sn-Zg-5kW" firstAttribute="leading" secondItem="scZ-Z4-sXW" secondAttribute="leading" constant="20" id="ttb-T3-9p0"/>
                             <constraint firstItem="scZ-Z4-sXW" firstAttribute="trailing" secondItem="RT9-6Q-fh6" secondAttribute="trailing" constant="172" id="vSB-Ia-o2l"/>
                             <constraint firstItem="6gR-Sb-8ES" firstAttribute="leading" secondItem="scZ-Z4-sXW" secondAttribute="leading" constant="170" id="zfB-vK-0yK"/>
+                            <constraint firstItem="scZ-Z4-sXW" firstAttribute="bottom" secondItem="GGx-fz-CZN" secondAttribute="bottom" constant="489" id="zm1-xD-FQZ"/>
                         </constraints>
                     </view>
                     <connections>

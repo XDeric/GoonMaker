@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yL-8I-9sh">
 
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yL-8I-9sh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -52,26 +52,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="A0U-d4-7Lb">
-                                <rect key="frame" x="72.5" y="174.5" width="269" height="269"/>
-                                <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="TQs-np-EJg">
-                                        <rect key="frame" x="-2" y="0.0" width="273" height="68.5"/>
-                                    </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-BG-ylO">
-                                        <rect key="frame" x="-2" y="67.5" width="273" height="68"/>
-                                    </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-kJ-zk1">
-                                        <rect key="frame" x="-2" y="134.5" width="273" height="68.5"/>
-                                    </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Cb-Nx-Utf">
-                                        <rect key="frame" x="-2" y="202" width="273" height="68"/>
-                                    </slider>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="A0U-d4-7Lb" secondAttribute="height" multiplier="1:1" id="CxP-ke-r6S"/>
-                                </constraints>
-                            </stackView>
+
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyM-44-XvQ" userLabel="Reset Button">
                                 <rect key="frame" x="355" y="108" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
@@ -92,11 +73,17 @@
                                     <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cgU-7A-nrL"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTJ-ps-YGV" userLabel="Breathing View">
-                                <rect key="frame" x="103.5" y="451.5" width="207" height="207"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTJ-ps-YGV" userLabel="outer_Breathing View">
+                                <rect key="frame" x="103.5" y="518.5" width="207" height="207"/>
+
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-oL-bjB" userLabel="inner_Breathing View">
+                                        <rect key="frame" x="4" y="4" width="199" height="199"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Km-wW-iy1" userLabel="Breathing Button">
-                                        <rect key="frame" x="83" y="83" width="41" height="41.5"/>
+                                        <rect key="frame" x="83" y="83" width="41" height="41"/>
+
                                         <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Km-wW-iy1" secondAttribute="height" multiplier="1:1" id="siL-1r-wot"/>
@@ -109,36 +96,53 @@
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstItem="5Km-wW-iy1" firstAttribute="centerY" secondItem="pTJ-ps-YGV" secondAttribute="centerY" id="3uc-M7-11y"/>
+                                    <constraint firstItem="z0A-oL-bjB" firstAttribute="top" secondItem="pTJ-ps-YGV" secondAttribute="top" constant="4" id="6Vv-8a-OIU"/>
+                                    <constraint firstAttribute="bottom" secondItem="z0A-oL-bjB" secondAttribute="bottom" constant="4" id="KJJ-cf-6NQ"/>
                                     <constraint firstItem="5Km-wW-iy1" firstAttribute="width" secondItem="pTJ-ps-YGV" secondAttribute="width" multiplier="0.2" id="Ne6-hZ-LuL"/>
                                     <constraint firstAttribute="width" secondItem="pTJ-ps-YGV" secondAttribute="height" multiplier="1:1" id="QYG-qp-1LK"/>
+                                    <constraint firstAttribute="trailing" secondItem="z0A-oL-bjB" secondAttribute="trailing" constant="4" id="c0g-7Z-O5F"/>
+                                    <constraint firstItem="z0A-oL-bjB" firstAttribute="leading" secondItem="pTJ-ps-YGV" secondAttribute="leading" constant="4" id="fCw-yM-kmI"/>
                                     <constraint firstItem="5Km-wW-iy1" firstAttribute="centerX" secondItem="pTJ-ps-YGV" secondAttribute="centerX" id="iDY-f7-p5N"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AAA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-0Q-IqH">
-                                <rect key="frame" x="190.33333333333334" y="666.33333333333337" width="33.333333333333343" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="A0U-d4-7Lb" customClass="UIStack">
+                                <rect key="frame" x="20" y="182.5" width="374" height="300"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="TQs-np-EJg" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                        <rect key="frame" x="-2" y="0.0" width="378" height="31"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-BG-ylO" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                        <rect key="frame" x="-2" y="90" width="378" height="31"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-kJ-zk1" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                        <rect key="frame" x="-2" y="180" width="378" height="31"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="9Cb-Nx-Utf" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                        <rect key="frame" x="-2" y="270" width="378" height="31"/>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="A0U-d4-7Lb" secondAttribute="height" multiplier="187:150" id="rGD-7M-g6d"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="cth-hF-rwF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5Ij-s7-5ft"/>
                             <constraint firstItem="o6L-yp-ISj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7JX-pT-41H"/>
-                            <constraint firstItem="pTJ-ps-YGV" firstAttribute="top" secondItem="A0U-d4-7Lb" secondAttribute="bottom" constant="8" id="B3M-hR-fHo"/>
+                            <constraint firstItem="pTJ-ps-YGV" firstAttribute="top" secondItem="A0U-d4-7Lb" secondAttribute="bottom" constant="36" id="B3y-j0-5Ul"/>
+                            <constraint firstItem="A0U-d4-7Lb" firstAttribute="top" secondItem="gmV-He-Flm" secondAttribute="bottom" constant="16" id="Bam-nq-d97"/>
                             <constraint firstItem="glQ-wV-xem" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eut-Tu-UwZ"/>
                             <constraint firstItem="pTJ-ps-YGV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FX0-GJ-MUL"/>
                             <constraint firstItem="pTJ-ps-YGV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="J1s-Ic-eB2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pTJ-ps-YGV" secondAttribute="bottom" constant="20" id="J92-lm-K39"/>
                             <constraint firstItem="gmV-He-Flm" firstAttribute="top" secondItem="glQ-wV-xem" secondAttribute="bottom" constant="8" symbolic="YES" id="MN2-aK-zkF"/>
                             <constraint firstItem="cth-hF-rwF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QoB-v0-wtN"/>
-                            <constraint firstItem="LrE-0Q-IqH" firstAttribute="centerX" secondItem="5Km-wW-iy1" secondAttribute="centerX" id="Se1-af-Azd"/>
-                            <constraint firstItem="LrE-0Q-IqH" firstAttribute="top" secondItem="pTJ-ps-YGV" secondAttribute="bottom" constant="8" id="T8N-1c-1os"/>
-                            <constraint firstItem="A0U-d4-7Lb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="fPK-ka-vHH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A0U-d4-7Lb" secondAttribute="trailing" constant="20" id="aBo-bg-Rjm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YyM-44-XvQ" secondAttribute="trailing" constant="20" id="fe5-RH-WpK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o6L-yp-ISj" secondAttribute="bottom" constant="30" id="jO7-ia-lAj"/>
-                            <constraint firstItem="A0U-d4-7Lb" firstAttribute="top" secondItem="gmV-He-Flm" secondAttribute="bottom" constant="8" symbolic="YES" id="mQN-iX-ISn"/>
-                            <constraint firstItem="A0U-d4-7Lb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wLS-Pl-Ymz"/>
+                            <constraint firstItem="A0U-d4-7Lb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l3k-5u-HJB"/>
                             <constraint firstItem="YyM-44-XvQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xzo-tW-xLq"/>
                             <constraint firstItem="gmV-He-Flm" firstAttribute="centerX" secondItem="glQ-wV-xem" secondAttribute="centerX" id="yZV-5L-ltf"/>
                             <constraint firstItem="glQ-wV-xem" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="z69-LZ-psd"/>
@@ -147,7 +151,8 @@
                     <navigationItem key="navigationItem" id="MsB-U0-FZU"/>
                     <connections>
                         <outlet property="breathingButton" destination="5Km-wW-iy1" id="zmh-as-fFR"/>
-                        <outlet property="breathingButtonBoundary" destination="pTJ-ps-YGV" id="Jfb-gj-mxl"/>
+                        <outlet property="breathingButtonInnerBoundary" destination="z0A-oL-bjB" id="gi9-dE-9kH"/>
+                        <outlet property="breathingButtonOuterBoundary" destination="pTJ-ps-YGV" id="Jfb-gj-mxl"/>
                         <outlet property="scoreLabel" destination="cth-hF-rwF" id="Cr4-lT-AzQ"/>
                         <outlet property="slider1" destination="TQs-np-EJg" id="K78-Qb-DrG"/>
                         <outlet property="slider2" destination="8FR-BG-ylO" id="PUd-wP-hQ7"/>
@@ -156,12 +161,11 @@
                         <outlet property="sliderStackView" destination="A0U-d4-7Lb" id="rti-yN-42C"/>
                         <outlet property="startTimerButton" destination="glQ-wV-xem" id="IiC-Mo-yyK"/>
                         <outlet property="timerLabel" destination="gmV-He-Flm" id="R59-vZ-HFx"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="42.728635682158924"/>
+            <point key="canvasLocation" x="-388.40579710144931" y="42.1875"/>
         </scene>
     </scenes>
     <resources>

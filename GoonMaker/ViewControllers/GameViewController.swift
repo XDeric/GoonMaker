@@ -89,7 +89,7 @@ class GameViewController: UIViewController {
     var gameSession = GameSession(isPlaying: false, lives: 3, userScore: UserScore(userName: "AAA", score: 0)) {
         // TODO: Add userDefault functions to PersistenceHelper
         didSet {
-            userNameLabel.text = gameSession.userScore.userName
+//            userNameLabel.text = gameSession.userScore.userName
             print(gameSession.userScore.userName)
         }
     }
@@ -248,7 +248,7 @@ class GameViewController: UIViewController {
         }
     }
     func checkGameCondition() {
-        if gameSession?.lives == 0 {
+        if gameSession.lives == 0 {
             // Game over condition
             // TODO: Decide what to do here, whether we upload to the leaderboard, no questions asked? Present the leaderboard? Show alert giving the user an option to submit to leaderboard with name and score?
             

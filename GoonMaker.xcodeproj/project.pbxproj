@@ -27,6 +27,8 @@
 		85AE299525D717FD009661E6 /* GoonMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE299425D717FD009661E6 /* GoonMakerTests.swift */; };
 		85AE29A025D717FD009661E6 /* GoonMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE299F25D717FD009661E6 /* GoonMakerUITests.swift */; };
 		880F132425D728CC00532BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880F132325D728CC00532BB5 /* GoogleService-Info.plist */; };
+		881BAF8125DB5F2700D75633 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BAF8025DB5F2700D75633 /* CustomSlider.swift */; };
+		881BAF8625DBFF8000D75633 /* CustomVertStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BAF8525DBFF8000D75633 /* CustomVertStack.swift */; };
 		8868519A25DAC79D0006A7E0 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868519925DAC79D0006A7E0 /* PersistenceHelper.swift */; };
 		886851A025DAC9030006A7E0 /* DataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = 8868519F25DAC9030006A7E0 /* DataPersistence */; };
 		886851A625DAC9F10006A7E0 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886851A525DAC9F10006A7E0 /* FileManager+Extension.swift */; };
@@ -77,6 +79,8 @@
 		85AE299F25D717FD009661E6 /* GoonMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoonMakerUITests.swift; sourceTree = "<group>"; };
 		85AE29A125D717FD009661E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880F132325D728CC00532BB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		881BAF8025DB5F2700D75633 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		881BAF8525DBFF8000D75633 /* CustomVertStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVertStack.swift; sourceTree = "<group>"; };
 		8868519925DAC79D0006A7E0 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		886851A525DAC9F10006A7E0 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		8888EA7925D72E7D000CE885 /* GameSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionModel.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				85AE298125D717FA009661E6 /* GameViewController.swift */,
+				881BAF8025DB5F2700D75633 /* CustomSlider.swift */,
+				881BAF8525DBFF8000D75633 /* CustomVertStack.swift */,
 				8888EA9C25D73554000CE885 /* SettingsViewController.swift */,
 				55F2D3B025DB206B00208D76 /* LeaderboardViewController.swift */,
 			);
@@ -491,12 +497,13 @@
 				85AE298225D717FA009661E6 /* GameViewController.swift in Sources */,
 
 				886851A625DAC9F10006A7E0 /* FileManager+Extension.swift in Sources */,
-		
-				55F2D3A225DB194B00208D76 /* Secrets.swift in Sources */,
+				881BAF8125DB5F2700D75633 /* CustomSlider.swift in Sources */,
+				88C3916D25D72268007D71C3 /* Secrets.swift in Sources */,
 
 				8888EA9D25D73554000CE885 /* SettingsViewController.swift in Sources */,
 				8532AE4F25DB26C600E7BCBB /* UserInfo.swift in Sources */,
 				8888EA8825D731AD000CE885 /* UserDefaults.swift in Sources */,
+				881BAF8625DBFF8000D75633 /* CustomVertStack.swift in Sources */,
 				85AE297E25D717FA009661E6 /* AppDelegate.swift in Sources */,
 				8888EA7A25D72E7D000CE885 /* GameSessionModel.swift in Sources */,
 
@@ -683,6 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4KQ459XHC;
 				INFOPLIST_FILE = GoonMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -702,6 +710,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4KQ459XHC;
 				INFOPLIST_FILE = GoonMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

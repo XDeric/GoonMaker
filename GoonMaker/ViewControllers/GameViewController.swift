@@ -241,7 +241,18 @@ class GameViewController: UIViewController {
             self.animate()
         }
     }
-    
+    func checkGameCondition() {
+        if gameSession?.lives == 0 {
+            // Game over condition
+            // TODO: Decide what to do here, whether we upload to the leaderboard, no questions asked? Present the leaderboard? Show alert giving the user an option to submit to leaderboard with name and score?
+            
+            // Should we assign the gamescore an ID (UUID) to be able to highlight or call that score at a later point? For example: When they navigate to the leaderboard, we can show them their rank instead of simply the top scores and make them scroll
+        }
+        
+        if slider1.isEnabled == false || slider2.isEnabled == false || slider3.isEnabled == false || slider4.isEnabled == false && breathingButton.isEnabled == false {
+            // This is essentially instead of doing 5 lives
+        }
+    }
     //MARK:- @IBActions
     @objc func onSliderValChanged(slider: UISlider, event: UIEvent) {
         var min: Float = 0.0

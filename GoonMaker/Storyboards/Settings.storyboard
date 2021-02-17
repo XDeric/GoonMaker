@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RT9-6Q-fh6">
-                                <rect key="frame" x="171" y="171" width="72" height="34"/>
+                                <rect key="frame" x="171" y="173" width="72" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="CR8-cZ-Ca9"/>
                                 </constraints>
@@ -25,21 +25,32 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-fz-CZN">
-                                <rect key="frame" x="160.5" y="265" width="93" height="30"/>
+                                <rect key="frame" x="160.5" y="267" width="93" height="30"/>
                                 <state key="normal" title="Submit Name"/>
                                 <connections>
                                     <action selector="submitNameButtonPressed:" destination="hUI-ss-XGV" eventType="touchUpInside" id="g1k-MX-Aun"/>
                                     <action selector="submitNameButtonPressed:" destination="5gA-Tg-3nQ" eventType="touchUpInside" id="ie4-cE-ogd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gR-Sb-8ES">
+                                <rect key="frame" x="170" y="98" width="74" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="scZ-Z4-sXW"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="RT9-6Q-fh6" firstAttribute="top" secondItem="scZ-Z4-sXW" secondAttribute="top" constant="127" id="8VT-nu-qPf"/>
+                            <constraint firstItem="scZ-Z4-sXW" firstAttribute="trailing" secondItem="6gR-Sb-8ES" secondAttribute="trailing" constant="170" id="CDD-z4-5JX"/>
                             <constraint firstItem="GGx-fz-CZN" firstAttribute="top" secondItem="RT9-6Q-fh6" secondAttribute="bottom" constant="60" id="ESe-Ws-1XA"/>
+                            <constraint firstItem="scZ-Z4-sXW" firstAttribute="bottom" secondItem="GGx-fz-CZN" secondAttribute="bottom" constant="565" id="PVq-iU-3tc"/>
+                            <constraint firstItem="RT9-6Q-fh6" firstAttribute="centerX" secondItem="6gR-Sb-8ES" secondAttribute="centerX" id="Qpp-ty-rEy"/>
                             <constraint firstItem="RT9-6Q-fh6" firstAttribute="centerX" secondItem="GGx-fz-CZN" secondAttribute="centerX" id="ace-Gm-DxW"/>
+                            <constraint firstItem="RT9-6Q-fh6" firstAttribute="top" secondItem="6gR-Sb-8ES" secondAttribute="bottom" constant="52" id="azp-zP-GIv"/>
+                            <constraint firstItem="6gR-Sb-8ES" firstAttribute="top" secondItem="scZ-Z4-sXW" secondAttribute="top" constant="54" id="bih-bm-DLm"/>
                             <constraint firstItem="GGx-fz-CZN" firstAttribute="centerX" secondItem="6Gz-Vz-vTt" secondAttribute="centerX" id="mcY-w3-rtx"/>
+                            <constraint firstItem="6gR-Sb-8ES" firstAttribute="leading" secondItem="scZ-Z4-sXW" secondAttribute="leading" constant="170" id="zfB-vK-0yK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -49,12 +60,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhz-v6-nWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="hUI-ss-XGV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="396" y="-110"/>
+            <point key="canvasLocation" x="395.6521739130435" y="-110.49107142857143"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

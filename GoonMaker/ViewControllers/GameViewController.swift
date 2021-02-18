@@ -51,6 +51,7 @@ class GameViewController: UIViewController {
             scoreLabel.text = ("\(currentGameScore.rounded())")
         }
     }
+    var decrementedLifeForBreathingButton = false
     
     // Timer
     var timerIsPaused: Bool = true
@@ -76,11 +77,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    var gameSession = GameSession(isPlaying: false, lives: 3, userScore: UserScore(userName: "AAA", score: 0)) {
-        didSet {
-            print(gameSession.userScore.userName)
-        }
-    }
+    var gameSession = GameSession(isPlaying: false, lives: 3, userScore: UserScore(userName: "AAA", score: 0))
     var defaults = UserDefaults.standard
     
     var sliderStatus: Set<String> = ["slider1","slider2","slider3","slider4","breathBtn"]//for gameover condition
@@ -106,7 +103,7 @@ class GameViewController: UIViewController {
             gameSession.userScore.userName = userName
         }
     }
-    private func startTimer() {
+    private func toggleTimer() {
         timerIsPaused.toggle()
         if timerIsPaused == false {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in
@@ -119,10 +116,10 @@ class GameViewController: UIViewController {
                     }
                 } else {
                     self.seconds = self.seconds + 1
-//                    self.animateSliderImage(slider: self.slider1)
-//                    self.animateSliderImage(slider: self.slider2)
-//                    self.animateSliderImage(slider: self.slider3)
-//                    self.animateSliderImage(slider: self.slider4)
+                    self.animateSliderImage(slider: self.slider1)
+                    self.animateSliderImage(slider: self.slider2)
+                    self.animateSliderImage(slider: self.slider3)
+                    self.animateSliderImage(slider: self.slider4)
                 }
             }
         } else {
@@ -230,11 +227,11 @@ class GameViewController: UIViewController {
                 
                 // Decrement player lives
                 // TODO: This seems to be getting called too many times, resulting in game over too soon
-                var decrementedLife = false
-                if decrementedLife == false {
+                
+                if self.decrementedLifeForBreathingButton == false {
                     self.gameSession.lives -= 1
                     self.checkForGameOver()
-                    decrementedLife = true
+                    self.decrementedLifeForBreathingButton = true
                 }
                 //            self.checkGameCondition()
                 self.breathingButton.isEnabled = false
@@ -242,6 +239,7 @@ class GameViewController: UIViewController {
             }
         } else {
             // TODO: This is where we can pause the breathing button
+            
             print("I want to pause the breathing button")
         }
     }
@@ -407,12 +405,27 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
+        // Reinitialize game scores to begin a new game
         currentGameScore = 0
         slider1MaxValue = 0
         slider2MaxValue = 0
         slider3MaxValue = 0
         slider4MaxValue = 0
+        buttonMaxValue = 0
         timerLabel.text = "00:00"
+        
+        // Reset the breathingButton and sliders
+        slider1.setValue(1, animated: true)
+        slider2.setValue(1, animated: true)
+        slider3.setValue(1, animated: true)
+        slider4.setValue(1, animated: true)
+        // Note: Reset button to original size here?
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear, .beginFromCurrentState]) {
+              self.breathingButton.layer.removeAllAnimations()
+              self.breathingButton.transform = .identity
+              self.breathingButton.backgroundColor = #colorLiteral(red: 0.2052684426, green: 0.7807833552, blue: 0.3487253785, alpha: 1)
+        }
+        // Stop the timer
         timer.invalidate()
     }
     @IBAction func settingsButtonPressed(_ sender: UIButton) {
@@ -426,7 +439,7 @@ class GameViewController: UIViewController {
         //        animateSliderBackgroundColors(slider2)
         //        animateSliderBackgroundColors(slider3)
         //        animateSliderBackgroundColors(slider4)
-        startTimer()
+        toggleTimer()
         if timerIsPaused {
             startTimerButton.setTitle("Start", for: .normal)
             animateBreathingButton()

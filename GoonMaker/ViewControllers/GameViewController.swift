@@ -20,42 +20,32 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    
     @IBOutlet weak var breathingButtonOuterBoundary: UIView!
     @IBOutlet weak var breathingButtonInnerBoundary: UIView!
     @IBOutlet weak var breathingButton: UIButton!
     
     //MARK:- Variable and Constants
-    //Score
     var slider1MaxValue: Float = 0.0 {
         didSet {
-//                        animateSliderImage(slider: slider1)
             checkSliderValue(slider: slider1)
         }
     }
     var slider2MaxValue: Float = 0.0 {
         didSet {
-            //            animateSliderImage(slider: slider2)
             checkSliderValue(slider: slider2)
         }
     }
     var slider3MaxValue: Float = 0.0 {
         didSet {
-            //            animateSliderImage(slider: slider3)
             checkSliderValue(slider: slider3)
         }
     }
     var slider4MaxValue: Float = 0.0 {
         didSet {
-            //            animateSliderImage(slider: slider4)
             checkSliderValue(slider: slider4)
         }
     }
-    var buttonMaxValue: Float = 0.0 {
-        didSet {
-            //            print(buttonMaxValue)
-        }
-    }
+    var buttonMaxValue: Float = 0.0
     var currentGameScore: Float = 0.0 {
         didSet {
             scoreLabel.text = ("\(currentGameScore.rounded())")
@@ -87,10 +77,8 @@ class GameViewController: UIViewController {
     }
     
     var gameSession = GameSession(isPlaying: false, lives: 3, userScore: UserScore(userName: "AAA", score: 0)) {
-        // TODO: Add userDefault functions to PersistenceHelper
         didSet {
-            //            userNameLabel.text = gameSession.userScore.userName
-            //            print(gameSession.userScore.userName)
+            print(gameSession.userScore.userName)
         }
     }
     var defaults = UserDefaults.standard
@@ -109,7 +97,7 @@ class GameViewController: UIViewController {
         //NOTE: This will rotate the entire sliderStack 90 degrees, to a vertical Orientation
         //        sliderStackView.transform = CGAffineTransform.init(rotationAngle: -.pi/2)
         setupBtnBoundary()
-        //        loadUserInfo()
+        loadUserInfo()
     }
     
     //MARK:- Functions
@@ -131,10 +119,10 @@ class GameViewController: UIViewController {
                     }
                 } else {
                     self.seconds = self.seconds + 1
-                    self.animateSliderImage(slider: self.slider1)
-                    self.animateSliderImage(slider: self.slider2)
-                    self.animateSliderImage(slider: self.slider3)
-                    self.animateSliderImage(slider: self.slider4)
+//                    self.animateSliderImage(slider: self.slider1)
+//                    self.animateSliderImage(slider: self.slider2)
+//                    self.animateSliderImage(slider: self.slider3)
+//                    self.animateSliderImage(slider: self.slider4)
                 }
             }
         } else {
@@ -241,11 +229,16 @@ class GameViewController: UIViewController {
             } completion: { _ in
                 
                 // Decrement player lives
-                self.gameSession.lives -= 1
-                self.checkForGameOver()
-                
+                // TODO: This seems to be getting called too many times, resulting in game over too soon
+                var decrementedLife = false
+                if decrementedLife == false {
+                    self.gameSession.lives -= 1
+                    self.checkForGameOver()
+                    decrementedLife = true
+                }
                 //            self.checkGameCondition()
                 self.breathingButton.isEnabled = false
+               
             }
         } else {
             // TODO: This is where we can pause the breathing button
@@ -268,7 +261,7 @@ class GameViewController: UIViewController {
         if gameSession.isPlaying {
             if gameSession.lives <= 0 {
                 print("game over")
-                //            uploadScoreToFirebase(score: gameSession.userScore)
+                uploadScoreToFirebase(score: gameSession.userScore)
                 gameSession.isPlaying = false
             } else {
                 print("still playing, lives left: \(gameSession.lives)")
@@ -276,6 +269,7 @@ class GameViewController: UIViewController {
         }
     }
     func uploadScoreToFirebase(score: UserScore) {
+        gameSession.userScore.score = Int(currentGameScore)
         FirestoreService.manager.createUserInfo(usrInfo: UserInfo(name: gameSession.userScore.userName, score: gameSession.userScore.score)) { (result) in
             switch result {
             case .success:

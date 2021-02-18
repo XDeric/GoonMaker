@@ -44,25 +44,26 @@ class GameViewController: UIViewController {
     
     var slider1MaxValue: Float = 0.0 {
         didSet {
-            checkSliderValue(slider: slider1)
+//            checkSliderValue(slider: slider1)
         }
     }
     var slider2MaxValue: Float = 0.0 {
         didSet {
-            checkSliderValue(slider: slider2)
+//            checkSliderValue(slider: slider2)
         }
     }
     var slider3MaxValue: Float = 0.0 {
         didSet {
-            checkSliderValue(slider: slider3)
+//            checkSliderValue(slider: slider3)
         }
     }
     var slider4MaxValue: Float = 0.0 {
         didSet {
-            checkSliderValue(slider: slider4)
+//            checkSliderValue(slider: slider4)
         }
     }
     var buttonMaxValue: Float = 0.0
+    var breathingButtonDidEnd = false
     var currentGameScore: Float = 0.0 {
         didSet {
             scoreLabel.text = ("Score: \(currentGameScore.rounded())")
@@ -94,10 +95,13 @@ class GameViewController: UIViewController {
         }
     }
     
-    var gameSession = GameSession(isPlaying: false, lives: 3, userScore: UserScore(userName: "AAA", score: 0))
+    var gameSession = GameSession(isPlaying: false, lives: 3, userScore: UserScore(userName: "AAA", score: 0)) {
+        didSet {
+            print(gameSession.lives)
+        }
+    }
     var defaults = UserDefaults.standard
     
-    var sliderStatus: Set<String> = ["slider1","slider2","slider3","slider4","breathBtn"]//for gameover condition
     var animator: UIViewPropertyAnimator!
     
     //MARK:- View Lifecycles
@@ -105,7 +109,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         setupSliders()
         animateStartGameConstraints()
-   //     animateBreathingButton()
+        animateBreathingButton()
     }
     override func viewWillAppear(_ animated: Bool) {
         loadUserInfo()
@@ -190,35 +194,17 @@ class GameViewController: UIViewController {
         animator.startAnimation()
     }
     private func checkSliderValue(slider: UISlider) {
-        if slider.value == slider.maximumValue {
-            slider.isEnabled = false
-            
-            // Decrement user lives
-            gameSession.lives -= 1
-            checkForGameOver()
-            
-//            checkGameCondition()
-        } else {
-            slider.isEnabled = true
+        if slider.isEnabled == true {
+            if slider.value > 99 {
+                slider.isEnabled = false
+                gameSession.lives -= 1
+                checkForGameOver()
+            } else {
+                slider.isEnabled = true
+            }
         }
     }
-    func animateSliderBackgroundColors(_ slider: UISlider) {
-        //        UIView.animateKeyframes(withDuration: 1,
-        //                                delay: 0.0,
-        //                                options: [.allowUserInteraction, .beginFromCurrentState]) {
-        //            UIView.addKeyframe(withRelativeStartTime: 0.5/4, relativeDuration: 1/4) {
-        //                slider.minimumTrackTintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        //            }
-        //            UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
-        //                slider.minimumTrackTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        //            }
-        //            UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
-        //                slider.minimumTrackTintColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
-        //            }
-        //        } completion: { _ in
-        //
-        //        }
-    }
+
     func setupBtnBoundary() {
         breathingButtonOuterBoundary.layer.cornerRadius = breathingButtonOuterBoundary.frame.width / 2
         breathingButton.layer.cornerRadius = breathingButton.frame.width / 2
@@ -232,18 +218,11 @@ class GameViewController: UIViewController {
             self.startTimerButton.transform = CGAffineTransform(rotationAngle: .pi)
             self.startTimerButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             self.startTimerButton.alpha = 0
-        } completion: { _ in
-            //            print("start button poof")
         }
     }
-
-  /* from GameBoardUI
-    @objc func animateBreathingButton() {
-        if gameSession.isPlaying {
-  */
-
+    
     ///setsup the animation for uiviewanimeproperty
-    func animateBreathingButton(){
+    func animateBreathingButton() {
         animator = UIViewPropertyAnimator(duration: 10, curve: .easeIn, animations: {
             UIView.animateKeyframes(withDuration: 10,
                                     delay: 0.5,
@@ -258,26 +237,16 @@ class GameViewController: UIViewController {
                 UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
                     self.breathingButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
                 }
-
-              /* from GameBoardUI
-            } completion: { _ in
-                
-                // Decrement player lives
-                // TODO: This seems to be getting called too many times, resulting in game over too soon
-                
-                if self.decrementedLifeForBreathingButton == false {
-                    self.gameSession.lives -= 1
-                    self.checkForGameOver()
-                    self.decrementedLifeForBreathingButton = true
-                }
-                //            self.checkGameCondition()
-                self.breathingButton.isEnabled = false
-               */
             }
         })
         animator.addCompletion { position in
             if position == .end {
-                self.checkGameCondition()
+                if self.breathingButton.isEnabled == false {
+                    self.gameSession.lives -= 1
+                    self.checkForGameOver()
+                    self.decrementedLifeForBreathingButton = true
+                }
+//                self.checkForGameOver()
                 self.breathingButton.isEnabled = false
             }
         }
@@ -297,10 +266,6 @@ class GameViewController: UIViewController {
             UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
                 self.breathingButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
             }
-        } else {
-            // TODO: This is where we can pause the breathing button
-            
-            print("I want to pause the breathing button")
         }
     }
     func revertAnimate() {
@@ -311,23 +276,20 @@ class GameViewController: UIViewController {
         } completion: { _ in
             self.breathingButton.isEnabled = true
             self.buttonMaxValue = 0.0
-
-            // self.animateBreathingButton()
-            //print("reverted")
-//            self.animate()
-            self.animator.addAnimations {//once it's done playing one animation animator is empty so have to add a animation in
+            self.animator.addAnimations {
                 self.animate()
             }
-            self.animator.startAnimation() // then start it again and repeat
+            self.animator.startAnimation()
         }
     }
     func checkForGameOver() {
         if gameSession.isPlaying {
-            if gameSession.lives <= 0 {
+            if gameSession.lives < 1 {
                 print("game over")
                 uploadScoreToFirebase(score: gameSession.userScore)
                 gameSession.isPlaying = false
                 startTimerButton.setTitle("Want to play again?", for: .normal)
+                animator.pauseAnimation()
                 timer.invalidate()
                 // TODO: Navigate to leaderboard here
             } else {
@@ -340,6 +302,7 @@ class GameViewController: UIViewController {
         FirestoreService.manager.createUserInfo(usrInfo: UserInfo(name: gameSession.userScore.userName, score: gameSession.userScore.score)) { (result) in
             switch result {
             case .success:
+            //TODO: Show alert or push to leaderboard?
                 print("pushed to FireBase")
             case let .failure(error):
                 print("failed: \(error)")
@@ -349,13 +312,7 @@ class GameViewController: UIViewController {
     func animateStartGameConstraints() {
         if timerIsPaused {
             // Paused
-            /// Hide timer
-            /// Hide score
-            /// Show settings button
-            /// Show leaderboard button
-            /// Show Reset button
-            
-            // HIDE
+            /// HIDE
             if timerLabel.alpha > 0 {
 //            while timerLabelTopConstraint.constant > timerLabelBound {
 //                timerLabelTopConstraint.constant -= 1
@@ -395,15 +352,8 @@ class GameViewController: UIViewController {
 //                }, completion: nil)
 //            }
         } else {
-            // Playing
-            /// Show timer
-            /// Show Score
-            /// Hide settings Button
-            /// Hide leaderboard button
-            /// Hide Reset button
-            
-            
-            //SHOW
+            //Playing
+            /// SHOW
             if timerLabel.alpha < 1.0 {
 //            while timerLabelTopConstraint.constant < 0 {
 //                timerLabelTopConstraint.constant += 1
@@ -420,8 +370,7 @@ class GameViewController: UIViewController {
                 }, completion: nil)
             }
             
-            
-            // HIDE
+            /// HIDE
             while settingsButtonLeadingConstraint.constant > scoreLabelLowerBound {
                 settingsButtonLeadingConstraint.constant -= 1
                 UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
@@ -446,59 +395,6 @@ class GameViewController: UIViewController {
             
         }
     }
- /* DEPRECATED
-    func checkGameCondition() {
-        //since i have this check condition in a animation it get called continuously which made my ints continously subtracted so i'm using a set to just remove unique item
-        while gameSession.isPlaying {
-        if slider1.isEnabled == false {
-            sliderStatus.remove("slider1")
-        }
-        if slider2.isEnabled == false {
-            sliderStatus.remove("slider2")
-        }
-        if slider3.isEnabled == false {
-            sliderStatus.remove("slider3")
-        }
-        if slider4.isEnabled == false {
-            sliderStatus.remove("slider4")
-        }
-        if breathingButton.isEnabled == false {
-            sliderStatus.remove("breathBtn")
-        }
-        if sliderStatus.count <= 2 {
-            timer.invalidate()
-            print("game Over")
-        } else {
-            print("still playing")
-        }
-            //segue everything to leaderboard
-//            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//                  let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
-//            else {return}
-//            UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
-//                window.rootViewController = LeaderboardViewController()
-//            }, completion: nil)
-            // Game over condition
-            // TODO: Decide what to do here, whether we upload to the leaderboard, no questions asked? Present the leaderboard? Show alert giving the user an option to submit to leaderboard with name and score?
-            
-            // Should we assign the gamescore an ID (UUID) to be able to highlight or call that score at a later point? For example: When they navigate to the leaderboard, we can show them their rank instead of simply the top scores and make them scroll
-        }
-        //push to firebase
-//            FirestoreService.manager.createUserInfo(usrInfo: UserInfo(name: gameSession.userScore.userName, score: gameSession.userScore.score)) { (result) in
-//                switch result {
-//                case .success:
-//                    print("pushed to FireBase")
-//                case let .failure(error):
-//                    print("failer \(error)")
-//                }
-//            }
-
-        /*if slider1.isEnabled == false || slider2.isEnabled == false || slider3.isEnabled == false || slider4.isEnabled == false && breathingButton.isEnabled == false {
-         // This is essentially instead of doing 5 lives
-         }*/
-
-    }
-    */
     
     //MARK:- @IBActions
     @objc func onSliderValChanged(slider: UISlider, event: UIEvent) {
@@ -586,7 +482,7 @@ class GameViewController: UIViewController {
         slider2.setValue(1, animated: true)
         slider3.setValue(1, animated: true)
         slider4.setValue(1, animated: true)
-        // Note: Reset button to original size here?
+        
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear, .beginFromCurrentState]) {
               self.breathingButton.layer.removeAllAnimations()
               self.breathingButton.transform = .identity
@@ -603,42 +499,22 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
-        //        animateSliderBackgroundColors(slider1)
-        //        animateSliderBackgroundColors(slider2)
-        //        animateSliderBackgroundColors(slider3)
-        //        animateSliderBackgroundColors(slider4)
         toggleTimer()
             if timerIsPaused {
                 startTimerButton.setTitle("Continue", for: .normal)
-                animateBreathingButton()
                 animateStartGameConstraints()
+                animator.pauseAnimation()
             } else {
-                //            startButtonAnimation()
                 gameSession.isPlaying = true
-                animateBreathingButton()
-                // TODO: Update animate func to stop the animation when the game is not being played?
                 startTimerButton.setTitle("Pause", for: .normal)
                 animateStartGameConstraints()
+                animator.startAnimation()
             }
-
-      /* from prod on a merge...
-        startTimer()
-        if timerIsPaused {
-            startTimerButton.setTitle("Start", for: .normal)
-            animator.pauseAnimation()
-        } else {
-            animator.startAnimation()
-            // TODO: Update animate func to stop the animation when the game is not being played?
-            startTimerButton.setTitle("Stop", for: .normal)
-        }
-      */
-
     }
     @IBAction func breathingButtonPressed(_ sender: UIButton) {
         currentGameScore = currentGameScore + buttonMaxValue
         revertAnimate()
     }
-    
     
 }
 

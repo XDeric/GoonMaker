@@ -98,16 +98,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="A0U-d4-7Lb">
                                 <rect key="frame" x="20" y="182.5" width="374" height="300"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="TQs-np-EJg" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="TQs-np-EJg" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="0.0" width="378" height="31"/>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-BG-ylO" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-BG-ylO" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="90" width="378" height="31"/>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-kJ-zk1" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-kJ-zk1" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="180" width="378" height="31"/>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="9Cb-Nx-Utf" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Cb-Nx-Utf" customClass="CustomSlider" customModule="GoonMaker" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="270" width="378" height="31"/>
                                     </slider>
                                 </subviews>

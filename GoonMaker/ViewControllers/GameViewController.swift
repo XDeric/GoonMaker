@@ -534,7 +534,12 @@ class GameViewController: UIViewController {
         currentGameScore = currentGameScore + buttonMaxValue
         revertAnimate()
     }
-    
+    @IBAction func leaderBoardButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Leaderboard", bundle: nil)
+        let leaderboardViewController = storyboard.instantiateViewController(identifier: "Leaderboard")
+        leaderboardViewController.title = "Global Leaderboard"
+        navigationController?.pushViewController(leaderboardViewController, animated: true)
+    }
 }
 
 //MARK:- Slider Setup Funcs

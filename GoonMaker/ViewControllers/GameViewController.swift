@@ -287,6 +287,8 @@ class GameViewController: UIViewController {
                 uploadScoreToFirebase(score: gameSession.userScore)
                 gameSession.isPlaying = false
                 startTimerButton.setTitle("Want to play again?", for: .normal)
+                timer.invalidate()
+                // TODO: Navigate to leaderboard here
             } else {
                 print("still playing, lives left: \(gameSession.lives)")
             }
@@ -564,19 +566,18 @@ class GameViewController: UIViewController {
         //        animateSliderBackgroundColors(slider3)
         //        animateSliderBackgroundColors(slider4)
         toggleTimer()
-        
-        if timerIsPaused {
-            startTimerButton.setTitle("Continue", for: .normal)
-            animateBreathingButton()
-            animateStartGameConstraints()
-        } else {
-            //            startButtonAnimation()
-            gameSession.isPlaying = true
-            animateBreathingButton()
-            // TODO: Update animate func to stop the animation when the game is not being played?
-            startTimerButton.setTitle("Pause", for: .normal)
-            animateStartGameConstraints()
-        }
+            if timerIsPaused {
+                startTimerButton.setTitle("Continue", for: .normal)
+                animateBreathingButton()
+                animateStartGameConstraints()
+            } else {
+                //            startButtonAnimation()
+                gameSession.isPlaying = true
+                animateBreathingButton()
+                // TODO: Update animate func to stop the animation when the game is not being played?
+                startTimerButton.setTitle("Pause", for: .normal)
+                animateStartGameConstraints()
+            }
     }
     @IBAction func breathingButtonPressed(_ sender: UIButton) {
         currentGameScore = currentGameScore + buttonMaxValue

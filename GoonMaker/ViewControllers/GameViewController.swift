@@ -65,7 +65,7 @@ class GameViewController: UIViewController {
     var buttonMaxValue: Float = 0.0
     var currentGameScore: Float = 0.0 {
         didSet {
-            scoreLabel.text = ("\(currentGameScore.rounded())")
+            scoreLabel.text = ("Score: \(currentGameScore.rounded())")
         }
     }
     var decrementedLifeForBreathingButton = false
@@ -286,6 +286,7 @@ class GameViewController: UIViewController {
                 print("game over")
                 uploadScoreToFirebase(score: gameSession.userScore)
                 gameSession.isPlaying = false
+                startTimerButton.setTitle("Want to play again?", for: .normal)
             } else {
                 print("still playing, lives left: \(gameSession.lives)")
             }
@@ -312,8 +313,9 @@ class GameViewController: UIViewController {
             /// Show Reset button
             
             // HIDE
-            while timerLabelTopConstraint.constant > timerLabelBound {
-                timerLabelTopConstraint.constant -= 1
+            if timerLabel.alpha > 0 {
+//            while timerLabelTopConstraint.constant > timerLabelBound {
+//                timerLabelTopConstraint.constant -= 1
                 UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
                     self.timerLabel.alpha = 0.0
                     self.view.layoutIfNeeded()
@@ -335,13 +337,13 @@ class GameViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }, completion: nil)
             }
-//            while timerLabelTopConstraint.constant < 0 {
-//                timerLabelTopConstraint.constant += 1
-//                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
-//                    self.timerLabel.alpha = 1.0
-//                    self.view.layoutIfNeeded()
-//                }, completion: nil)
-//            }
+            while leaderBoardTrailingConstraint.constant < 20 {
+                leaderBoardTrailingConstraint.constant += 1
+                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
+                    self.leaderBoardButton.alpha = 1.0
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+            }
 //            while timerLabelTopConstraint.constant < 0 {
 //                timerLabelTopConstraint.constant += 1
 //                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
@@ -359,8 +361,9 @@ class GameViewController: UIViewController {
             
             
             //SHOW
-            while timerLabelTopConstraint.constant < 0 {
-                timerLabelTopConstraint.constant += 1
+            if timerLabel.alpha < 1.0 {
+//            while timerLabelTopConstraint.constant < 0 {
+//                timerLabelTopConstraint.constant += 1
                 UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
                     self.timerLabel.alpha = 1.0
                     self.view.layoutIfNeeded()
@@ -383,13 +386,13 @@ class GameViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }, completion: nil)
             }
-//            while scoreLabelLeadingConstraint.constant > scoreLabelLowerBound {
-//                scoreLabelLeadingConstraint.constant -= 1
-//                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
-//                    self.scoreLabel.alpha = 0.0
-//                    self.view.layoutIfNeeded()
-//                }, completion: nil)
-//            }
+            while leaderBoardTrailingConstraint.constant > 0 {
+                leaderBoardTrailingConstraint.constant -= 1
+                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
+                    self.leaderBoardButton.alpha = 0.0
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+            }
 //            while scoreLabelLeadingConstraint.constant > scoreLabelLowerBound {
 //                scoreLabelLeadingConstraint.constant -= 1
 //                UIView.animate(withDuration: 0.3, delay: 0.0, options: [.transitionCrossDissolve], animations: {
@@ -532,6 +535,7 @@ class GameViewController: UIViewController {
         slider4MaxValue = 0
         buttonMaxValue = 0
         timerLabel.text = "00:00"
+        startTimerButton.setTitle("Start", for: .normal)
         
         // Reset the breathingButton and sliders
         slider1.setValue(1, animated: true)
@@ -546,6 +550,7 @@ class GameViewController: UIViewController {
         }
         // Stop the timer
         timer.invalidate()
+        animateStartGameConstraints()
     }
     @IBAction func settingsButtonPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -561,7 +566,7 @@ class GameViewController: UIViewController {
         toggleTimer()
         
         if timerIsPaused {
-            startTimerButton.setTitle("Start", for: .normal)
+            startTimerButton.setTitle("Continue", for: .normal)
             animateBreathingButton()
             animateStartGameConstraints()
         } else {

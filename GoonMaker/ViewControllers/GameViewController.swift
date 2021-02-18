@@ -98,12 +98,14 @@ class GameViewController: UIViewController {
     var defaults = UserDefaults.standard
     
     var sliderStatus: Set<String> = ["slider1","slider2","slider3","slider4","breathBtn"]//for gameover condition
+    var animator: UIViewPropertyAnimator!
     
     //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSliders()
         animateStartGameConstraints()
+   //     animateBreathingButton()
     }
     override func viewWillAppear(_ animated: Bool) {
         loadUserInfo()
@@ -234,8 +236,15 @@ class GameViewController: UIViewController {
             //            print("start button poof")
         }
     }
+
+  /* from GameBoardUI
     @objc func animateBreathingButton() {
         if gameSession.isPlaying {
+  */
+
+    ///setsup the animation for uiviewanimeproperty
+    func animateBreathingButton(){
+        animator = UIViewPropertyAnimator(duration: 10, curve: .easeIn, animations: {
             UIView.animateKeyframes(withDuration: 10,
                                     delay: 0.5,
                                     options: [.allowUserInteraction, .beginFromCurrentState]) {
@@ -249,6 +258,8 @@ class GameViewController: UIViewController {
                 UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
                     self.breathingButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
                 }
+
+              /* from GameBoardUI
             } completion: { _ in
                 
                 // Decrement player lives
@@ -261,7 +272,30 @@ class GameViewController: UIViewController {
                 }
                 //            self.checkGameCondition()
                 self.breathingButton.isEnabled = false
-               
+               */
+            }
+        })
+        animator.addCompletion { position in
+            if position == .end {
+                self.checkGameCondition()
+                self.breathingButton.isEnabled = false
+            }
+        }
+    }
+    
+    @objc func animate() {
+        UIView.animateKeyframes(withDuration: 10,
+                                delay: 0.5,
+                                options: [.allowUserInteraction, .beginFromCurrentState]) {
+            self.breathingButton.transform = CGAffineTransform(scaleX: 5, y: 5)
+            UIView.addKeyframe(withRelativeStartTime: 0.5/4, relativeDuration: 1/4) {
+                self.breathingButton.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 2/4, relativeDuration: 1/4) {
+                self.breathingButton.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 3.5/4, relativeDuration: 1/4) {
+                self.breathingButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
             }
         } else {
             // TODO: This is where we can pause the breathing button
@@ -277,7 +311,14 @@ class GameViewController: UIViewController {
         } completion: { _ in
             self.breathingButton.isEnabled = true
             self.buttonMaxValue = 0.0
-            self.animateBreathingButton()
+
+            // self.animateBreathingButton()
+            //print("reverted")
+//            self.animate()
+            self.animator.addAnimations {//once it's done playing one animation animator is empty so have to add a animation in
+                self.animate()
+            }
+            self.animator.startAnimation() // then start it again and repeat
         }
     }
     func checkForGameOver() {
@@ -425,8 +466,7 @@ class GameViewController: UIViewController {
             sliderStatus.remove("breathBtn")
         }
         if sliderStatus.count <= 2 {
-            timerIsPaused = true
-//            timer.invalidate()
+            timer.invalidate()
             print("game Over")
         } else {
             print("still playing")
@@ -452,9 +492,11 @@ class GameViewController: UIViewController {
 //                    print("failer \(error)")
 //                }
 //            }
+
         /*if slider1.isEnabled == false || slider2.isEnabled == false || slider3.isEnabled == false || slider4.isEnabled == false && breathingButton.isEnabled == false {
          // This is essentially instead of doing 5 lives
          }*/
+
     }
     */
     
@@ -578,6 +620,19 @@ class GameViewController: UIViewController {
                 startTimerButton.setTitle("Pause", for: .normal)
                 animateStartGameConstraints()
             }
+
+      /* from prod on a merge...
+        startTimer()
+        if timerIsPaused {
+            startTimerButton.setTitle("Start", for: .normal)
+            animator.pauseAnimation()
+        } else {
+            animator.startAnimation()
+            // TODO: Update animate func to stop the animation when the game is not being played?
+            startTimerButton.setTitle("Stop", for: .normal)
+        }
+      */
+
     }
     @IBAction func breathingButtonPressed(_ sender: UIButton) {
         currentGameScore = currentGameScore + buttonMaxValue
